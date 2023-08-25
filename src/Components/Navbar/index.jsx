@@ -8,7 +8,18 @@ const Navbar = () => {
 				src='/ABEJA.png'
 				alt='Abeja-icono'
 			/>
-			<ul className='flex p-2 gap-3 '>
+				<svg
+					xmlns='http://www.w3.org/2000/svg'
+					height='40'
+					viewBox='0 -960 960 960'
+					width='40'
+					className='sm:hidden'
+					fill="white"
+				>
+					<path d='M120-240v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z' />
+				</svg>
+			<ul className='hidden sm:flex p-2 gap-3 '>
+			
 				<li>
 					<NavLink
 						to='/Cripto-Project'
