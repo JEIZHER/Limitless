@@ -1,8 +1,8 @@
 function CriptoProject() {
 	return (
 		<>
-			<div>
-				<h1 className='text-3xl font-bold underline bg-green-100'>
+			<div className="m-12 flex justify-center items-center bg-green-500" >
+				<h1 className='text-3xl font-bold underline '>
 					CriptoProject
 				</h1>
 			</div>
