@@ -1,5 +1,6 @@
 import { useRoutes, BrowserRouter } from 'react-router-dom'
 import Navbar from '../../Components/Navbar'
+import Footer from '../../Components/Footer'
 import Home from '../Home'
 import CriptoProject from '../CriptoProject'
 import './App.css'
@@ -15,6 +16,8 @@ const App = () => {
 		<BrowserRouter>
 			<Navbar/>
 			<AppRoutes />
+			<Footer/>
+
 		</BrowserRouter>
 	)
 }
