@@ -1,26 +1,25 @@
+import Card from '../../Components/Card'
+import Form from '../../Components/Form'
 import '../../index.css'
 function Home() {
-	
 	return (
 		<>
 			{/* Wrapper  */}
-			<div id='wrapper' className='mt-10 text-white'>
-				{/*------------------------------------- Intro  */}
+
+			<div id='wrapper' className='mt-10 text-sm text-white'>
+				{/* ----------------------------------- Intro  */}
+
 				<section
 					id='intro'
 					className='flex flex-col bg-gradient-to-r from-violet-500 to-blue-700 '
 				>
-					<div className='pt-11 pl-7 pr-7 pb-4 w-screen max-w-full'>
-						<h1 className='text-3xl font-bold mb-4'>X-Limitless</h1>
-						<p className='mb-7'>
-							Responsive site template designed by Joseph Izarra
-						</p>
-						<ul>
-							<li className='grow shrink'>
-								<a href='#one'className='flex flex-col items-center grow shrink border rounded-full mb-7  w-full pt-2 pb-2'> Learn more</a>
-							</li>
-						</ul>
-					</div>
+					<Card
+						sizeTittle='3xl'
+						titulo='X-Limitless'
+						texto='Responsive site template designed by Joseph Izarra'
+						referencia='one'
+						marco='1'
+					/>
 				</section>
 
 				{/*--------------------------------------- One */}
@@ -29,64 +28,40 @@ function Home() {
 					className='relative flex flex-col bg-gradient-to-r from-violet-500 to-blue-700 '
 				>
 					<section>
-						<a href='#' className=' block bg-pic01 bg-center w-full h-60'>
-							{/* <img src="public/pic01.jpg" alt="" data-position="center center" className="hidden w-full align-baseline" /> */}
-						</a>
-						<div className='pt-11 pl-7 pr-7 pb-4 w-screen max-w-full'>
-							<div>
-								<h2 className='text-2xl font-bold mb-4'>Sed ipsum dolor</h2>
-								<p className='mb-7'>
-									Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam
-									turpis mauris, eu ultricies erat malesuada quis. Aliquam
-									dapibus.
-								</p>
-								<ul >
-									<li>
-										<a href='#' className='flex flex-col items-center grow shrink border rounded-full mb-7  w-full pt-2 pb-2'>Learn more</a>
-									</li>
-								</ul>
-							</div>
-						</div>
+						<Card
+							sizeTittle='2xl'
+							titulo='Sed ipsum dolor'
+							texto='Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam
+						           turpis mauris, eu ultricies erat malesuada quis. Aliquam
+						           dapibus.'
+							referencia='#'
+							imagen='/pic01.jpg'
+							marco='1'
+						/>
 					</section>
 					<section>
-						<a href='#' className=' block bg-pic01 bg-center w-full h-60'>
-							{/* <img src="images/pic02.jpg" alt="" data-position="top center" /> */}
-						</a>
-						<div className='pt-11 pl-7 pr-7 pb-4 w-screen max-w-full'>
-							<div>
-								<h2 className='text-2xl font-bold mb-4'>Feugiat consequat</h2>
-								<p className='mb-7'>
-									Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam
-									turpis mauris, eu ultricies erat malesuada quis. Aliquam
-									dapibus.
-								</p>
-								<ul >
-									<li>
-										<a href='#' className='flex flex-col items-center grow shrink border rounded-full mb-7  w-full pt-2 pb-2'>Learn more</a>
-									</li>
-								</ul>
-							</div>
-						</div>
+						<Card
+							sizeTittle='2xl'
+							titulo='Feugiat consequat'
+							texto='Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam
+						           turpis mauris, eu ultricies erat malesuada quis. Aliquam
+					        	   dapibus.'
+							referencia='#'
+							imagen='/pic01.jpg'
+							marco='1'
+						/>
 					</section>
 					<section>
-						<a href='#' className=' block bg-pic01 bg-center w-full h-60'>
-							{/* <img src="images/pic03.jpg" alt="" data-position="25% 25%" /> */}
-						</a>
-						<div className='pt-11 pl-7 pr-7 pb-4 w-screen max-w-full'>
-							<div>
-								<h2 className='text-2xl font-bold mb-4'>Ultricies aliquam</h2>
-								<p className='mb-7'>
-									Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam
+						<Card
+							sizeTittle='2xl'
+							titulo='Ultricies aliquam'
+							texto='Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam
 									turpis mauris, eu ultricies erat malesuada quis. Aliquam
-									dapibus.
-								</p>
-								<ul>
-									<li>
-										<a href='#'className='flex flex-col items-center grow shrink border rounded-full mb-7  w-full pt-2 pb-2'>Learn more</a>
-									</li>
-								</ul>
-							</div>
-						</div>
+									dapibus.'
+							referencia='#'
+							imagen='/pic01.jpg'
+							marco='1'
+						/>
 					</section>
 				</section>
 
@@ -95,17 +70,17 @@ function Home() {
 					id='two'
 					className='relative flex flex-col bg-gradient-to-r from-indigo-400 to-blue-800'
 				>
-					<div className='pl-8 pr-8 pb-4 pt-11'>
+					<div className='px-7 pt-11 pb-4'>
 						<h2 className='text-2xl font-bold mb-4'>What we do</h2>
-						<p className='mb-8'>
+						<p className='mb-7'>
 							Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam
 							turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus,
 							lacus eget hendrerit bibendum, urna est aliquam sem, sit amet
 							imperdiet est velit quis lorem.
 						</p>
 						<div className='flex flex-col flex-wrap border rounded-sm mb-8'>
-							<section className='pl-6 pr-6 pt-8 pb-1 border-b '>
-								<span className='block mb-5'>
+							<Card
+								icon={
 									<svg
 										xmlns='http://www.w3.org/2000/svg'
 										viewBox='0 0 24 24'
@@ -118,15 +93,15 @@ function Home() {
 											clipRule='evenodd'
 										/>
 									</svg>
-								</span>
-								<h3 className='text-1xl font-bold mb-3'>Lorem ipsum amet</h3>
-								<p className='mb-8'>
-									Phasellus convallis elit id ullam corper amet et pulvinar.
-									Duis aliquam turpis mauris, sed ultricies erat dapibus.
-								</p>
-							</section>
-							<section className='pl-6 pr-6 pt-8 pb-1 border-b'>
-								<span className='block mb-5'>
+								}
+								sizeTittle='1xl'
+								titulo='Lorem ipsum amet'
+								texto='Phasellus convallis elit id ullam corper amet et pulvinar.
+						       Duis aliquam turpis mauris, sed ultricies erat dapibus.'
+								marco='2'
+							/>
+							<Card
+								icon={
 									<svg
 										xmlns='http://www.w3.org/2000/svg'
 										viewBox='0 0 24 24'
@@ -139,15 +114,15 @@ function Home() {
 											clipRule='evenodd'
 										/>
 									</svg>
-								</span>
-								<h3 className='text-1xl font-bold mb-3'>Aliquam sed nullam</h3>
-								<p className='mb-8'>
-									Phasellus convallis elit id ullam corper amet et pulvinar.
-									Duis aliquam turpis mauris, sed ultricies erat dapibus.
-								</p>
-							</section>
-							<section className='pl-6 pr-6 pt-8 pb-1 border-b'>
-								<span className='block mb-5'>
+								}
+								sizeTittle='1xl'
+								titulo='Aliquam sed nullam'
+								texto='Phasellus convallis elit id ullam corper amet et pulvinar.
+						       Duis aliquam turpis mauris, sed ultricies erat dapibus.'
+								marco='2'
+							/>
+							<Card
+								icon={
 									<svg
 										xmlns='http://www.w3.org/2000/svg'
 										viewBox='0 0 24 24'
@@ -161,17 +136,15 @@ function Home() {
 										/>
 										<path d='M5.082 14.254a8.287 8.287 0 00-1.308 5.135 9.687 9.687 0 01-1.764-.44l-.115-.04a.563.563 0 01-.373-.487l-.01-.121a3.75 3.75 0 013.57-4.047zM20.226 19.389a8.287 8.287 0 00-1.308-5.135 3.75 3.75 0 013.57 4.047l-.01.121a.563.563 0 01-.373.486l-.115.04c-.567.2-1.156.349-1.764.441z' />
 									</svg>
-								</span>
-								<h3 className='text-1xl font-bold mb-3'>
-									Sed erat ullam corper
-								</h3>
-								<p className='mb-8'>
-									Phasellus convallis elit id ullam corper amet et pulvinar.
-									Duis aliquam turpis mauris, sed ultricies erat dapibus.
-								</p>
-							</section>
-							<section className='pl-6 pr-6 pt-8 pb-1 border-b'>
-								<span className='block mb-5'>
+								}
+								sizeTittle='1xl'
+								titulo='Sed erat ullam corper'
+								texto='Phasellus convallis elit id ullam corper amet et pulvinar.
+						       Duis aliquam turpis mauris, sed ultricies erat dapibus.'
+								marco='2'
+							/>
+							<Card
+								icon={
 									<svg
 										xmlns='http://www.w3.org/2000/svg'
 										viewBox='0 0 24 24'
@@ -184,15 +157,15 @@ function Home() {
 											clipRule='evenodd'
 										/>
 									</svg>
-								</span>
-								<h3 className='text-1xl font-bold mb-3'>Veroeros quis lorem</h3>
-								<p className='mb-8'>
-									Phasellus convallis elit id ullam corper amet et pulvinar.
-									Duis aliquam turpis mauris, sed ultricies erat dapibus.
-								</p>
-							</section>
-							<section className='pl-6 pr-6 pt-8 pb-1 border-b'>
-								<span className='block mb-5'>
+								}
+								sizeTittle='1xl'
+								titulo='Veroeros quis lorem'
+								texto='Phasellus convallis elit id ullam corper amet et pulvinar.
+						       Duis aliquam turpis mauris, sed ultricies erat dapibus.'
+								marco='2'
+							/>
+							<Card
+								icon={
 									<svg
 										xmlns='http://www.w3.org/2000/svg'
 										viewBox='0 0 24 24'
@@ -201,15 +174,15 @@ function Home() {
 									>
 										<path d='M21.721 12.752a9.711 9.711 0 00-.945-5.003 12.754 12.754 0 01-4.339 2.708 18.991 18.991 0 01-.214 4.772 17.165 17.165 0 005.498-2.477zM14.634 15.55a17.324 17.324 0 00.332-4.647c-.952.227-1.945.347-2.966.347-1.021 0-2.014-.12-2.966-.347a17.515 17.515 0 00.332 4.647 17.385 17.385 0 005.268 0zM9.772 17.119a18.963 18.963 0 004.456 0A17.182 17.182 0 0112 21.724a17.18 17.18 0 01-2.228-4.605zM7.777 15.23a18.87 18.87 0 01-.214-4.774 12.753 12.753 0 01-4.34-2.708 9.711 9.711 0 00-.944 5.004 17.165 17.165 0 005.498 2.477zM21.356 14.752a9.765 9.765 0 01-7.478 6.817 18.64 18.64 0 001.988-4.718 18.627 18.627 0 005.49-2.098zM2.644 14.752c1.682.971 3.53 1.688 5.49 2.099a18.64 18.64 0 001.988 4.718 9.765 9.765 0 01-7.478-6.816zM13.878 2.43a9.755 9.755 0 016.116 3.986 11.267 11.267 0 01-3.746 2.504 18.63 18.63 0 00-2.37-6.49zM12 2.276a17.152 17.152 0 012.805 7.121c-.897.23-1.837.353-2.805.353-.968 0-1.908-.122-2.805-.353A17.151 17.151 0 0112 2.276zM10.122 2.43a18.629 18.629 0 00-2.37 6.49 11.266 11.266 0 01-3.746-2.504 9.754 9.754 0 016.116-3.985z' />
 									</svg>
-								</span>
-								<h3 className='text-1xl font-bold mb-3'>Urna quis bibendum</h3>
-								<p className='mb-8'>
-									Phasellus convallis elit id ullam corper amet et pulvinar.
-									Duis aliquam turpis mauris, sed ultricies erat dapibus.
-								</p>
-							</section>
-							<section className='pl-6 pr-6 pt-8 pb-1 '>
-								<span className='block mb-5'>
+								}
+								sizeTittle='1xl'
+								titulo='Urna quis bibendum'
+								texto='Phasellus convallis elit id ullam corper amet et pulvinar.
+						       Duis aliquam turpis mauris, sed ultricies erat dapibus.'
+								marco='2'
+							/>
+							<Card
+								icon={
 									<svg
 										xmlns='http://www.w3.org/2000/svg'
 										viewBox='0 0 24 24'
@@ -223,23 +196,25 @@ function Home() {
 											clipRule='evenodd'
 										/>
 									</svg>
-								</span>
-								<h3 className='text-1xl font-bold mb-3'>
-									Aliquam urna dapibus
-								</h3>
-								<p className='mb-8'>
-									Phasellus convallis elit id ullam corper amet et pulvinar.
-									Duis aliquam turpis mauris, sed ultricies erat dapibus.
-								</p>
-							</section>
+								}
+								sizeTittle='1xl'
+								titulo='Aliquam urna dapibus'
+								texto='Phasellus convallis elit id ullam corper amet et pulvinar.
+						       Duis aliquam turpis mauris, sed ultricies erat dapibus.'
+								marco='2'
+							/>
 						</div>
 						<ul>
 							<li>
-								<a href='#' className='flex flex-col items-center grow shrink border rounded-full mb-7  w-full pt-2 pb-2'>
-									Learn more
+								<a
+									href='#'
+									className='flex flex-col items-center border rounded-full mb-7 w-full py-2 text-[9px] font-bold tracking-[2.2px]'
+								>
+									LEARN MORE
 								</a>
 							</li>
 						</ul>
+				
 					</div>
 				</section>
 
@@ -248,9 +223,9 @@ function Home() {
 					id='three'
 					className='relative flex flex-col bg-gradient-to-r from-violet-500 to-blue-700 '
 				>
-					<div className='pl-8 pr-8 pb-4 pt-11'>
+					<div className='px-7 pb-4 pt-11'>
 						<h2 className='text-2xl font-bold mb-4'>Get in touch</h2>
-						<p className='mb-8  text-sm'>
+						<p className='mb-7'>
 							Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam
 							turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus,
 							lacus eget hendrerit bibendum, urna est aliquam sem, sit amet
@@ -258,31 +233,9 @@ function Home() {
 						</p>
 						<div>
 							<section>
-								<form method='post' action='#' >
-									<div  className="flex flex-col mb-8 ">
-										<div className="  pb-5">
-											<label htmlFor='name' className="block pb-3 ">Name</label>
-											<input type='text' name='name' id='name' autoComplete="given-name" className=" block  appearance-none focus:outline-none focus:border-white-500 focus:border-2 border rounded-md pl-4 pr-4  bg-transparent w-full h-10 " />
-										</div>
-										<div className=" pb-5">
-											<label htmlFor='email'className="block pb-3">Email</label>
-											<input type='text' name='email' id='email' autoComplete="given-email" className="block focus:outline-none focus:border-white-500 focus:border-2 border rounded-md pl-4 pr-4 appearance-none bg-transparent w-full h-10" />
-										</div>
-										<div className=" pb-5">
-											<label htmlFor='message' className="block mb-3">Message</label>
-											<textarea name='message' id='message' rows='5' className="block appearance-none bg-transparent border rounded-md focus:outline-none focus:border-white-500 focus:border-2 pl-4 pr-4 pt-3 pb-3 w-full resize"></textarea>
-										</div>
-									</div>
-									<ul>
-										<li>
-											<a href='' className='flex flex-col items-center grow shrink border rounded-full mb-7  w-full pt-2 pb-2'>
-												Send Message
-											</a>
-										</li>
-									</ul>
-								</form>
+								<Form />
 							</section>
-							<section className="pt-12 mt-12 border-t">
+							<section className='pt-12 mt-12 border-t'>
 								<ul className='mb-8'>
 									<li>
 										<h3 className='text-1xl font-bold mb-3'>Address</h3>
@@ -304,28 +257,28 @@ function Home() {
 									</li>
 									<li className='mt-6'>
 										<h3 className='text-1xl font-bold mb-3'>Social</h3>
-										<ul className="mb-8">
-											<li className="inline-block pr-3">
-												<a href='#' className="nf nf-fa-twitter" >
+										<ul className='mb-8'>
+											<li className='inline-block pr-3'>
+												<a href='#' className='nf nf-fa-twitter'>
 													{/* <span class='label'>Twitter</span> */}
 												</a>
 											</li>
-											<li className="inline-block pr-3">
+											<li className='inline-block pr-3'>
 												<a href='#' className='nf nf-fa-facebook'>
 													{/* <span class='label'>Facebook</span> */}
 												</a>
 											</li>
-											<li className="inline-block pr-3">
+											<li className='inline-block pr-3'>
 												<a href='#' className='nf nf-cod-github'>
 													{/* <span class='label'>GitHub</span> */}
 												</a>
 											</li>
-											<li className="inline-block pr-3">
+											<li className='inline-block pr-3'>
 												<a href='#' className='nf nf-fa-instagram'>
 													{/* <span class='label'>Instagram</span> */}
 												</a>
 											</li>
-											<li className="inline-block pr-3">
+											<li className='inline-block pr-3'>
 												<a href='#' className='nf nf-fa-linkedin'>
 													{/* <span class='label'>LinkedIn</span> */}
 												</a>
