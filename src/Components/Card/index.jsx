@@ -1,43 +1,31 @@
-
+import Boton from '../Boton'
 const Card = (props) => {
-    let nuevoMarco=''
-    if (props.marco==='1')
-    {
-    	nuevoMarco='px-7 pt-11 pb-4 w-screen max-w-full'
-    }else if(props.marco==='2')
-    {
-   	    nuevoMarco='px-6 pt-8 pb-1 border-b '
-    }
+	let nuevoMarco = ''
+	if (props.marco === '1') {
+		nuevoMarco = 'px-7 pt-11 pb-4 w-screen  max-w-full sm:px-16   '
+	} else if (props.marco === '2') {
+		nuevoMarco = 'px-6 pt-8 pb-1 border-b'
+	}
 
 	return (
-		<div>
+		<div className={` lg:flex ${props.icon ? 'lg:w-1/2' : ''}`}>
 			{props.imagen && (
-				<a href={props.referencia} className=' block bg-pic01 bg-center w-full h-60'>
+				<a
+					href={props.referencia}
+					className=' block bg-pic01 bg-center w-full h-[306px] lg:h-[390px] '
+				>
 					<img
 						src={props.imagen}
 						alt=''
-						data-position='25% 25%'
-						className='w-full h-60'
+						className='w-full h-[306px] lg:h-[390px]  '
 					/>
 				</a>
 			)}
 			<div className={nuevoMarco}>
 				{props.icon && <span className='block mb-5'>{props.icon}</span>}
-				<h1 className={`text-${props.sizeTittle} font-bold mb-4`}>{props.titulo}</h1>
+				<h1 className={`${props.sizeTittle} font-bold mb-4`}>{props.titulo}</h1>
 				<p className='mb-7'>{props.texto}</p>
-				{props.referencia && (
-					<ul >
-						<li >
-							<a
-								href={ props.referencia !='#'?`#${props.referencia}`:'#'}
-								className='flex flex-col min-w-[100px] items-center  border rounded-full mb-7  w-full py-2 text-[9px] font-bold tracking-[2.2px]'
-							>
-								{' '}
-								LEARN MORE
-							</a>
-						</li>
-					</ul>
-				)}
+				{props.referencia && <Boton referencia={props.referencia} />}
 			</div>
 		</div>
 	)

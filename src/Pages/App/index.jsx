@@ -6,15 +6,15 @@ import CriptoProject from '../CriptoProject'
 import './App.css'
 const AppRoutes = () => {
 	let routes = useRoutes([
-		{ path: '/', element: <Home/> },
-		{ path: '/Cripto-Project', element: <CriptoProject /> },
+		 { path: '/', element: <Home/> },
+		// { path: '/Cripto-Project', element: <CriptoProject /> },
 	])
 	return routes
 }
 const App = () => {	   
 	return (	
 		<BrowserRouter>
-			<Navbar/>
+			{/* <Navbar/> */}
 			<AppRoutes />
 			<Footer/>
 

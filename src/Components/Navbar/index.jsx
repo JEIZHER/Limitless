@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom'
 const Navbar = () => {
 	const activeStyle = 'underline underline-offset-4'
 	return (
-		<nav className='flex justify-between items-center rounded-md bg-gray-800 w-full h-10 z-20 top-0 pl-3 pr-5 text-white fixed'>
+		<nav className='flex justify-between items-center rounded-md bg-gray-800 w-full h-10 z-20 top-0 left-0 pl-3 pr-5 text-white fixed '>
 			<img
 				className=' rounded-full w-8 h-8'
 				src='/ABEJA.png'
