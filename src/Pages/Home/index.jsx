@@ -1,37 +1,35 @@
-import {useEffect} from 'react'
+import { useEffect } from 'react'
 import Card from '../../Components/Card'
 import Form from '../../Components/Form'
 import Boton from '../../Components/Boton'
 import Sidebar from '../../Components/SideBar'
 import Observer from '../../Utils/Observer'
 import '../../index.css'
-function Home() {	
-    
-	useEffect(() => {		
-		 Observer()       
-	},[])
-     
+function Home() {
+	useEffect(() => {
+		Observer()
+	}, [])
+
 	return (
-		<>	
-			<Sidebar />		
+		<>
+			<Sidebar />
 			{/* Wrapper  */}
-			<div  className=' text-sm  text-white  sm:text-base lg:ml-[250px]'  >				
+			<div className=' text-sm  text-white  sm:text-base lg:ml-[250px]'>
 				{/* ----------------------------------- Intro  */}
 				<div className='bg-gradient-to-t from-violet-800 to-blue-700 w-auto'>
 					<section
-					id='intro'
-					className='flex flex-col justify-center sm:bg-fixed bg-intro bg-cover  sm:h-screen sm:pt-1'
-				>
-					<Card
-						sizeTittle='text-3xl sm:text-5xl'
-						titulo='X-Limitless'
-						texto='Responsive site template designed by Joseph Izarra'
-						referencia='one'
-						marco='1'
-					/>
-				</section>	
+						id='intro'
+						className='flex flex-col justify-center sm:bg-fixed bg-intro bg-cover  sm:h-screen sm:pt-1'
+					>
+						<Card
+							sizeTittle='text-3xl sm:text-5xl'
+							titulo='X-Limitless'
+							texto='Responsive site template designed by Joseph Izarra'
+							referencia='one'
+							marco='1'
+						/>
+					</section>
 				</div>
-			
 
 				{/*--------------------------------------- One */}
 				<section
@@ -46,7 +44,7 @@ function Home() {
 						           turpis mauris, eu ultricies erat malesuada quis. Aliquam
 						           dapibus.'
 							referencia='#'
-							imagen='/pic01.jpg'
+							imagen= './assets/pic01.jpg'
 							marco='1'
 						/>
 					</section>
@@ -58,7 +56,7 @@ function Home() {
 						           turpis mauris, eu ultricies erat malesuada quis. Aliquam
 					        	   dapibus.'
 							referencia='#'
-							imagen='/pic01.jpg'
+							imagen='./assets/pic01.jpg'
 							marco='1'
 						/>
 					</section>
@@ -70,7 +68,7 @@ function Home() {
 									turpis mauris, eu ultricies erat malesuada quis. Aliquam
 									dapibus.'
 							referencia='#'
-							imagen='/pic01.jpg'
+							imagen='./assets/pic01.jpg'
 							marco='1'
 						/>
 					</section>
@@ -89,7 +87,7 @@ function Home() {
 							lacus eget hendrerit bibendum, urna est aliquam sem, sit amet
 							imperdiet est velit quis lorem.
 						</p>
-						
+
 						<div className='flex flex-col flex-wrap lg:flex-row border border-b-0 lg:border-r-0 lg:border-b-0 rounded-sm mb-8'>
 							<Card
 								icon={
@@ -216,8 +214,7 @@ function Home() {
 								marco='2'
 							/>
 						</div>
-						<Boton referencia = '#' Titulo="LEARN MORE"/>
-
+						<Boton referencia='#' Titulo='LEARN MORE' />
 					</div>
 				</section>
 
