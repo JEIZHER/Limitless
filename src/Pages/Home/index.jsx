@@ -44,7 +44,7 @@ function Home() {
 						           turpis mauris, eu ultricies erat malesuada quis. Aliquam
 						           dapibus.'
 							referencia='#'
-							imagen= './asset/pic01.jpg'
+							imagen= './assets/pic01.jpg'
 							marco='1'
 						/>
 					</section>
@@ -56,7 +56,7 @@ function Home() {
 						           turpis mauris, eu ultricies erat malesuada quis. Aliquam
 					        	   dapibus.'
 							referencia='#'
-							imagen='./asset/pic01.jpg'
+							imagen='./assets/pic01.jpg'
 							marco='1'
 						/>
 					</section>
@@ -68,7 +68,7 @@ function Home() {
 									turpis mauris, eu ultricies erat malesuada quis. Aliquam
 									dapibus.'
 							referencia='#'
-							imagen='./asset/pic01.jpg'
+							imagen='./assets/pic01.jpg'
 							marco='1'
 						/>
 					</section>
