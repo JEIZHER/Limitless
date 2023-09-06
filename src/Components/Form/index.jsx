@@ -24,7 +24,7 @@ const Form = () => {
 							type='text'
 							name='email'
 							id='email'
-							autoComplete='given-email'
+							autoComplete='email'
 							className='block focus:outline-none focus:border-white-500 focus:border-2 border rounded-md px-4 appearance-none bg-transparent w-full h-10'
 						/>
 					</div>
@@ -42,7 +42,7 @@ const Form = () => {
 					></textarea>
 				</div>
 			</div>
-			<Boton referencia='#' />
+			<Boton referencia='#' Titulo="SEND MESSAGE" />
 		</form>
 	)
 }

@@ -1,24 +1,26 @@
+import {useEffect} from 'react'
 import Card from '../../Components/Card'
 import Form from '../../Components/Form'
 import Boton from '../../Components/Boton'
 import Sidebar from '../../Components/SideBar'
+import Observer from '../../Utils/Observer'
 import '../../index.css'
-function Home() {
-	
+function Home() {	
+    
+	useEffect(() => {		
+		 Observer()       
+	},[])
+     
 	return (
 		<>	
-
-			<Sidebar />
-			
-
+			<Sidebar />		
 			{/* Wrapper  */}
-
-			<div id='wrapper' className=' text-sm  text-white  sm:text-base lg:ml-[250px]' >				
+			<div  className=' text-sm  text-white  sm:text-base lg:ml-[250px]'  >				
 				{/* ----------------------------------- Intro  */}
-
-				<section
+				<div className='bg-gradient-to-t from-violet-800 to-blue-700 w-auto'>
+					<section
 					id='intro'
-					className='flex flex-col justify-center bg-gradient-to-t from-violet-500 to-blue-700 sm:h-screen sm:pt-12'
+					className='flex flex-col justify-center sm:bg-fixed bg-intro bg-cover  sm:h-screen sm:pt-1'
 				>
 					<Card
 						sizeTittle='text-3xl sm:text-5xl'
@@ -27,12 +29,14 @@ function Home() {
 						referencia='one'
 						marco='1'
 					/>
-				</section>
+				</section>	
+				</div>
+			
 
 				{/*--------------------------------------- One */}
 				<section
 					id='one'
-					className='flex flex-col z-0 bg-gradient-to-t from-violet-500 to-blue-700 '
+					className='flex flex-col z-0 [&>*:nth-child(odd)]:bg-gradient-to-t from-violet-500 to-blue-700  [&>*:nth-child(even)]:bg-blue-600 '
 				>
 					<section>
 						<Card
@@ -75,9 +79,9 @@ function Home() {
 				{/* ----------------------------------------------------Two */}
 				<section
 					id='two'
-					className='flex flex-col bg-gradient-to-r from-indigo-400 to-blue-800 px-7 sm:pt-12 sm:px-16'
+					className='flex flex-col h-full bg-gradient-to-r from-indigo-400 to-blue-800 px-7 sm:pt-12 sm:px-16 lg:pb-10 '
 				>
-					<div className=' pt-11 pb-4'>
+					<div className=' pt-11 pb-4 h-full'>
 						<h2 className='text-2xl font-bold mb-4 sm:text-3xl'>What we do</h2>
 						<p className='mb-7'>
 							Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam
@@ -86,7 +90,7 @@ function Home() {
 							imperdiet est velit quis lorem.
 						</p>
 						
-						<div className='flex flex-col flex-wrap lg:flex-row border rounded-sm mb-8'>
+						<div className='flex flex-col flex-wrap lg:flex-row border border-b-0 lg:border-r-0 lg:border-b-0 rounded-sm mb-8'>
 							<Card
 								icon={
 									<svg
@@ -212,7 +216,7 @@ function Home() {
 								marco='2'
 							/>
 						</div>
-						<Boton referencia = '#'/>
+						<Boton referencia = '#' Titulo="LEARN MORE"/>
 
 					</div>
 				</section>
@@ -220,7 +224,7 @@ function Home() {
 				{/*------------------------------------------------------------- Three */}
 				<section
 					id='three'
-					className='flex flex-col bg-gradient-to-r from-violet-500 to-blue-700 px-7 sm:pt-12 sm:px-16'
+					className='flex flex-col bg-gradient-to-r from-violet-500 to-blue-700 px-7 sm:pt-12 sm:px-16 h-full lg:pb-20'
 				>
 					<div className='pb-4 pt-11'>
 						<h2 className='text-2xl font-bold mb-4'>Get in touch</h2>
@@ -230,11 +234,11 @@ function Home() {
 							lacus eget hendrerit bibendum, urna est aliquam sem, sit amet
 							imperdiet est velit quis lorem.
 						</p>
-						<div>
-							<section>
+						<div className='lg:flex lg:gap-6'>
+							<section className='lg:w-2/3'>
 								<Form />
 							</section>
-							<section className='pt-12 mt-12 border-t'>
+							<section className='pt-12 mt-12 border-t lg:pt-0 lg:mt-0 lg:border-l lg:border-t-0 lg:pl-6'>
 								<ul className='mb-8'>
 									<li>
 										<h3 className='text-1xl font-bold mb-3'>Address</h3>

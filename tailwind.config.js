@@ -5,6 +5,7 @@ export default {
     extend: {
       backgroundImage: {
         'pic01': "url('pic01.jpg')",
+        'intro':"url('intro.svg')"
       }
     },
   },
