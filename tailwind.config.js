@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'pic01': "url('assets/pic01.jpg')",
-        'intro':"url('assets/intro.svg')"
+        'pic01': "url('/pic01.jpg')",
+        'intro':"url('/intro.svg')"
       }
     },
   },
