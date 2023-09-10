@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
-import Card from '../../Components/Card'
+import Section from '../../Components/Section'
 import Form from '../../Components/Form'
-import Boton from '../../Components/Boton'
 import Sidebar from '../../Components/SideBar'
 import Observer from '../../Utils/Observer'
 import '../../index.css'
@@ -12,27 +11,25 @@ function Home() {
 
 	const data_sec_1 = [
 		{
-			titulo: 'X-Limitless',
-			texto: 'Responsive site template designed by Joseph Izarra',
-			imagen: '',
-		},
-		{
 			titulo: 'Sed ipsum dolor',
 			texto:
 				'Phasellus convallis elit id ullamcorper pulvinar. Duis aliquamurpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.',
 			imagen: '/pic01.jpg',
+			referencia: '#',
 		},
 		{
 			titulo: 'Feugiat consequat',
 			texto:
 				'Phasellus convallis elit id ullamcorper pulvinar. Duis aliquamurpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.',
 			imagen: '/pic01.jpg',
+			referencia: '#',
 		},
 		{
 			titulo: 'Ultricies aliquam',
 			texto:
 				'Phasellus convallis elit id ullamcorper pulvinar. Duis aliquamurpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.',
 			imagen: '/pic01.jpg',
+			referencia: '#',
 		},
 	]
 	const data_sec_2 = [
@@ -149,148 +146,63 @@ function Home() {
 			),
 		},
 	]
+	const data_Headers = [
+		{
+			sizeTittle: 'text-3xl sm:text-5xl',
+			titulo: 'X-Limitless',
+			texto: 'Responsive site template designed by Joseph Izarra',
+			background: ' h-screen bg-intro bg-cover bg-fixed',
+			referencia: 'one',
+			id: 'intro',
+		},
+		{
+			sizeTittle: 'text-2xl sm:text-3xl',
+			titulo: 'WHO WE ARE',
+			texto:'Phasellus convallis elit id ullamcorper pulvinar. Duis aliquamturpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus,lacus eget hendrerit bibendum, urna est aliquam sem, sit ametimperdiet est velit quis lorem.',
+			background: 'h-full  bg-gradient-to-t from-violet-500 to-blue-700',
+			referencia: '',
+			data_sec: data_sec_1,
+			marco: '1',
+			id: 'one',
+		},
+		{
+			sizeTittle: 'text-2xl font-bold mb-4 sm:text-3xl',
+			titulo: 'WHAT WE DO',
+			texto: 'Phasellus convallis elit id ullamcorper pulvinar. Duis aliquamturpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus,lacus eget hendrerit bibendum, urna est aliquam sem, sit ametimperdiet est velit quis lorem.',
+			background: 'h-full bg-gradient-to-r from-indigo-400 to-blue-800 ',
+			referencia: '#',
+			data_sec: data_sec_2,
+			marco: '2',
+			id: 'two',
+		},
+		{
+			sizeTittle: 'text-2xl font-bold mb-4',
+			titulo: 'GET IN TOUCH',
+			texto: 'Phasellus convallis elit id ullamcorper pulvinar. Duis aliquamturpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus,lacus eget hendrerit bibendum, urna est aliquam sem, sit ametimperdiet est velit quis lorem.',
+			background: 'h-full  bg-gradient-to-t from-violet-800 to-blue-700',
+			objet: <Form />,
+			id: 'three',
+		},
+	]
 
 	return (
 		<>
 			<Sidebar />
-			{/* Wrapper  */}
-			<div className=' text-sm  text-white  sm:text-base lg:ml-[250px]'>
-			{/* ---------------------------------------Intro ---------------------------*/}
-				<div className='bg-gradient-to-t from-violet-800 to-blue-700 w-auto'>
-					<section
-						id='intro'
-						className='flex flex-col    justify-center sm:bg-fixed bg-intro bg-cover  sm:h-screen sm:pt-1'
-					>
-						<Card
-							sizeTittle='text-3xl sm:text-5xl'
-							titulo={data_sec_1[0].titulo}
-							texto={data_sec_1[0].texto}
-							referencia='one'
-							marco='1'
-						/>
-					</section>
-				</div>
-
-            {/*-----------------------------------------One ----------------------------*/}
-				<section
-					id='one'
-					className='flex flex-col     [&>*:nth-child(odd)]:bg-gradient-to-t from-violet-500 to-blue-700  [&>*:nth-child(even)]:bg-blue-600 '
-				>
-					{data_sec_1?.map((dat, index) => (
-						<Card
-							key={index}
-							sizeTittle='text-2xl sm:text-3xl'
-							titulo={dat.titulo}
-							texto={dat.texto}
-							referencia='#'
-							imagen={dat.imagen}
-							marco='1'
-						/>
-					))}
-				</section>
-
-			{/* ----------------------------------------Two------------------------------*/}
-				<section
-					id='two'
-					className='flex flex-col h-full bg-gradient-to-r from-indigo-400 to-blue-800 px-7 sm:pt-12 sm:px-16 lg:pb-10 '
-				>
-					<div className=' pt-11 pb-4 '>
-						<h2 className='text-2xl font-bold mb-4 sm:text-3xl'>What we do</h2>
-						<p className='mb-7'>
-							Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam
-							turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus,
-							lacus eget hendrerit bibendum, urna est aliquam sem, sit amet
-							imperdiet est velit quis lorem.
-						</p>
-
-						<div className='flex flex-col flex-wrap lg:flex-row border border-b-0 lg:border-r-0 lg:border-b-0 rounded-sm mb-8'>
-							{data_sec_2?.map((dat, index) => (
-								<Card
-									key={index}
-									sizeTittle={'text-2xl sm:text-3xl'}
-									titulo={dat.titulo}
-									texto={dat.texto}
-									marco={'2'}
-									icon={dat.icon}
-								/>
-							))}
-						</div>
-						<Boton referencia='#' Titulo='LEARN MORE' />
-					</div>
-				</section>
-
-			{/*-----------------------------------------Three--------------------------- */}
-				<section
-					id='three'
-					className='flex flex-col bg-gradient-to-r from-violet-500 to-blue-700 px-7 sm:pt-12 sm:px-16 h-full lg:pb-20'
-				>
-					<div className='pb-4 pt-11'>
-						<h2 className='text-2xl font-bold mb-4'>Get in touch</h2>
-						<p className='mb-7'>
-							Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam
-							turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus,
-							lacus eget hendrerit bibendum, urna est aliquam sem, sit amet
-							imperdiet est velit quis lorem.
-						</p>
-						<div className='lg:flex lg:gap-6'>
-							<section className='lg:w-2/3'>
-								<Form />
-							</section>
-							<section className='pt-12 mt-12 border-t lg:pt-0 lg:mt-0 lg:border-l lg:border-t-0 lg:pl-6'>
-								<ul className='mb-8'>
-									<li>
-										<h3 className='text-1xl font-bold mb-3'>Address</h3>
-										<span>
-											12345 Somewhere Road #654
-											<br />
-											Nashville, TN 00000-0000
-											<br />
-											USA
-										</span>
-									</li>
-									<li className='mt-6'>
-										<h3 className='text-1xl font-bold mb-3'>Email</h3>
-										<a href='#'>user@untitled.tld</a>
-									</li>
-									<li className='mt-6'>
-										<h3 className='text-1xl font-bold mb-3'>Phone</h3>
-										<span>(000) 000-0000</span>
-									</li>
-									<li className='mt-6'>
-										<h3 className='text-1xl font-bold mb-3'>Social</h3>
-										<ul className='mb-8'>
-											<li className='inline-block pr-3'>
-												<a href='#' className='nf nf-fa-twitter'>
-													{/* <span class='label'>Twitter</span> */}
-												</a>
-											</li>
-											<li className='inline-block pr-3'>
-												<a href='#' className='nf nf-fa-facebook'>
-													{/* <span class='label'>Facebook</span> */}
-												</a>
-											</li>
-											<li className='inline-block pr-3'>
-												<a href='#' className='nf nf-cod-github'>
-													{/* <span class='label'>GitHub</span> */}
-												</a>
-											</li>
-											<li className='inline-block pr-3'>
-												<a href='#' className='nf nf-fa-instagram'>
-													{/* <span class='label'>Instagram</span> */}
-												</a>
-											</li>
-											<li className='inline-block pr-3'>
-												<a href='#' className='nf nf-fa-linkedin'>
-													{/* <span class='label'>LinkedIn</span> */}
-												</a>
-											</li>
-										</ul>
-									</li>
-								</ul>
-							</section>
-						</div>
-					</div>
-				</section>
+			<div className='text-sm  text-white  sm:text-base lg:ml-[250px]'>
+				{data_Headers?.map((data, index) => (
+					<Section
+						key={index}
+						id={data.id}
+						background={data.background}
+						marco={data.marco}
+						sizeTittle={data.sizeTittle}
+						titulo={data.titulo}
+						texto={data.texto}
+						data_sec={data.data_sec}						
+						referencia={data.referencia}												
+						objet={data.objet}
+					/>
+				))}
 			</div>
 		</>
 	)
