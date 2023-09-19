@@ -2,8 +2,9 @@ import { useEffect } from 'react'
 import Section from '../../Components/Section'
 import Form from '../../Components/Form'
 import Sidebar from '../../Components/SideBar'
+import Card from '../../Components/Card'
 import Observer from '../../Utils/Observer'
-import '../../index.css'
+
 function Home() {
 	useEffect(() => {
 		Observer()
@@ -34,7 +35,7 @@ function Home() {
 	]
 	const data_sec_2 = [
 		{
-			titulo: 'Lorem ipsum amet',
+			titulo: 'Lorem ipsum amet (1)',
 			texto:
 				'Phasellus convallis elit id ullam corper amet et pulvinar .Duis aliquam turpis mauris, sed ultricies erat dapibus.',
 			icon: (
@@ -147,29 +148,31 @@ function Home() {
 		},
 	]
 	const data_Headers = [
+		// {
+		// 	sizeTittle: 'text-3xl sm:text-5xl  mb-6',
+		// 	titulo: 'X-Limitless',
+		// 	texto: 'Responsive site template designed by Joseph Izarra',
+		// 	background: ' h-screen bg-intro bg-cover bg-fixed',
+		// 	referencia: 'one',
+		// 	id: 'intro',
+		// },
 		{
-			sizeTittle: 'text-3xl sm:text-5xl',
-			titulo: 'X-Limitless',
-			texto: 'Responsive site template designed by Joseph Izarra',
-			background: ' h-screen bg-intro bg-cover bg-fixed',
-			referencia: 'one',
-			id: 'intro',
-		},
-		{
-			sizeTittle: 'text-2xl sm:text-3xl',
+			sizeTittle: 'text-2xl sm:text-3xl  mb-4',
 			titulo: 'WHO WE ARE',
-			texto:'Phasellus convallis elit id ullamcorper pulvinar. Duis aliquamturpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus,lacus eget hendrerit bibendum, urna est aliquam sem, sit ametimperdiet est velit quis lorem.',
-			background: 'h-full  bg-gradient-to-t from-violet-500 to-blue-700',
+			texto:
+				'Phasellus convallis elit id ullamcorper pulvinar. Duis aliquamturpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus,lacus eget hendrerit bibendum, urna est aliquam sem, sit ametimperdiet est velit quis lorem.',
+			background: 'h-full  bg-gradient-to-l from-violet-500 to-blue-700',
 			referencia: '',
 			data_sec: data_sec_1,
 			marco: '1',
 			id: 'one',
 		},
 		{
-			sizeTittle: 'text-2xl font-bold mb-4 sm:text-3xl',
+			sizeTittle: 'text-2xl font-bold mb-4 sm:text-3xl  mb-4',
 			titulo: 'WHAT WE DO',
-			texto: 'Phasellus convallis elit id ullamcorper pulvinar. Duis aliquamturpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus,lacus eget hendrerit bibendum, urna est aliquam sem, sit ametimperdiet est velit quis lorem.',
-			background: 'h-full bg-gradient-to-r from-indigo-400 to-blue-800 ',
+			texto:
+				'Phasellus convallis elit id ullamcorper pulvinar. Duis aliquamturpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus,lacus eget hendrerit bibendum, urna est aliquam sem, sit ametimperdiet est velit quis lorem.',
+			background: 'h-full bg-gradient-to-l from-indigo-400 to-blue-800 ',
 			referencia: '#',
 			data_sec: data_sec_2,
 			marco: '2',
@@ -178,8 +181,9 @@ function Home() {
 		{
 			sizeTittle: 'text-2xl font-bold mb-4',
 			titulo: 'GET IN TOUCH',
-			texto: 'Phasellus convallis elit id ullamcorper pulvinar. Duis aliquamturpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus,lacus eget hendrerit bibendum, urna est aliquam sem, sit ametimperdiet est velit quis lorem.',
-			background: 'h-full  bg-gradient-to-t from-violet-800 to-blue-700',
+			texto:
+				'Phasellus convallis elit id ullamcorper pulvinar. Duis aliquamturpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus,lacus eget hendrerit bibendum, urna est aliquam sem, sit ametimperdiet est velit quis lorem.',
+			background: 'h-full  bg-gradient-to-l from-violet-800 to-blue-700',
 			objet: <Form />,
 			id: 'three',
 		},
@@ -188,7 +192,22 @@ function Home() {
 	return (
 		<>
 			<Sidebar />
-			<div className='text-sm  text-white  sm:text-base lg:ml-[250px]'>
+
+			<div className='text-sm  text-gray-200  sm:text-base lg:ml-[200px]'>		
+				<div className=' bg-gradient-to-l from-violet-800 to-blue-700'>
+					<section
+						id='intro'
+						className=' flex flex-col justify-center w-auto h-screen pb-10 px-7 pt-12  bg-intro  bg-cover bg-fixed sm:pt-24 sm:px-16  lg:pt-12 '
+					>
+						<Card
+							sizeTittle='text-3xl sm:text-5xl  mb-6'
+							titulo='X-Limitless'
+							texto='Responsive site template designed by Joseph Izarra'
+						/>
+					</section>	
+				</div>		
+			
+
 				{data_Headers?.map((data, index) => (
 					<Section
 						key={index}
@@ -198,8 +217,8 @@ function Home() {
 						sizeTittle={data.sizeTittle}
 						titulo={data.titulo}
 						texto={data.texto}
-						data_sec={data.data_sec}						
-						referencia={data.referencia}												
+						data_sec={data.data_sec}
+						referencia={data.referencia}
 						objet={data.objet}
 					/>
 				))}

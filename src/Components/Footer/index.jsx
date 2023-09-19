@@ -3,7 +3,7 @@ const Footer = () => {
 		//  Footer
 		<footer
 			id='footer'
-			className=' bg-gradient-to-r from-violet-400 to-blue-900 px-7 pt-12 pb-8 sm:px-16 lg:ml-[250px]'
+			className=' bg-gradient-to-r from-violet-600 to-blue-900 px-7 pt-12 pb-8 sm:px-16 lg:ml-[200px]'
 		>
 			<ul className='md:flex md:gap-3'>
 				<li>&copy; X-Limitless. All rights reserved.</li>

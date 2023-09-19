@@ -1,30 +1,33 @@
 import Observer from '../../Utils/Observer'
 
 const Sidebar = () => {
-	
-    const activeStyle = Observer()
+	const activeStyle = 'btn-menu'
+
 	return (
 		// Sidebar
 
-		<nav className=' hidden fixed top-0 h-12 lg:h-full  w-full lg:w-[250px] z-1000 bg-blue-900 sm:flex flex-row lg:flex-col justify-center items-center text-white text-bold text-[11px] '>
-			<ul className='menu flex flex-row lg:flex-col gap-3'>
-				<li className='w-30 hover:ring-4'>
-					<a href='#intro' className={`tracking-[2.2px] underline-offset-4   ${activeStyle}`}>
+		<nav className='hidden fixed top-0 h-12 lg:h-full  w-full lg:w-[200px] z-1000 bg-blue-900 sm:flex flex-row lg:flex-col justify-center items-center text-white text-bold text-[11px] '>
+			<ul className='relative menu flex flex-row justify-center lg:flex-col gap-3 lg:gap-7 w-full  lg:ml-6'>
+				<li>
+					<a
+						href='#intro'
+						className={`btn_sidebar ${activeStyle} lg:pr-[106px]`}
+					>
 						WELCOME
 					</a>
-				</li >
-				<li  className='w-30 hover:ring-4'>
-					<a href='#one' className='tracking-[2.2px] underline-offset-4'>
+				</li>
+				<li>
+					<a href='#one' className='btn_sidebar lg:pr-[84px]'>
 						WHO WE ARE
 					</a>
 				</li>
-				<li  className='w-30 hover:ring-4'>
-					<a href='#two' className='tracking-[2.2px] underline-offset-4'>
+				<li>
+					<a href='#two' className='btn_sidebar lg:pr-[82px]'>
 						WHAT WE DO
 					</a>
 				</li>
-				<li className='w-30 hover:ring-4'>
-					<a href='#three' className='tracking-[2.2px] underline-offset-4'>
+				<li>
+					<a href='#three' className='btn_sidebar lg:pr-[75px]'>
 						GET IN TOUCH
 					</a>
 				</li>

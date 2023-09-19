@@ -1,7 +1,26 @@
+/* @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css'; */
 @tailwind base;
 html {
-    scroll-behavior: smooth;
-  }
+	scroll-behavior: smooth;
+	font-family: Proxima Nova, system-ui, sans-serif;
+}
 @tailwind components;
+@layer components {
+	.btn-menu {
+		@apply lg:bg-blue-700 lg:bg-gradient-to-r from-violet-800 to-blue-700 lg:no-underline underline underline-offset-4;
+	}
+	.btn-menu2 {
+		@apply lg:bg-blue-700 lg:bg-gradient-to-r from-violet-500 to-blue-700  lg:no-underline underline underline-offset-4;
+	}
+	.btn-menu3 {
+		@apply lg:bg-blue-800 lg:bg-gradient-to-r from-indigo-400 to-blue-800 lg:no-underline underline underline-offset-4;
+	}
+	.btn_sidebar {
+		@apply transition-colors duration-1000 lg:absolute  tracking-[2.2px] lg:py-1 lg:pl-4  hover:shadow-slate-50  hover:shadow-md rounded-l-md;
+	}
+	.form-inputs {
+		@apply block focus:outline-none focus:border-white focus:border-2 border rounded-md px-4 appearance-none bg-transparent w-full;
+	}
+}
 @tailwind utilities;
 

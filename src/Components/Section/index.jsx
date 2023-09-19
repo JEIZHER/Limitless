@@ -4,15 +4,15 @@ import Boton from '../Boton'
 const Section = (props) => {
 	return (
 		<div
-			className={`${
-				!props.data_sec
-					? 'bg-gradient-to-t from-violet-800 to-blue-700 w-auto'
-					: ''
-			}`}
+			// className={`${
+			// 	!props.data_sec
+			// 		? ' bg-gradient-to-l from-violet-800 to-blue-700   w-auto'
+			// 		: ''
+			// }`}
 		>
 			<section
 				id={props.id}
-				className={`flex flex-col justify-center pb-10 px-7 pt-12 sm:pt-24 lg:pt-12 sm:px-16 lg:${props.background}`}
+				className={`flex flex-col justify-center pb-10 px-7 pt-12 sm:pt-24 lg:pt-12 sm:px-16 ${props.background}`}
 			>
 				<Card
 					sizeTittle={props.sizeTittle}
@@ -29,7 +29,7 @@ const Section = (props) => {
 					{props.data_sec?.map((dat, index) => (
 						<Card
 							key={index}
-							sizeTittle='text-2xl sm:text-3xl'
+							sizeTittle='text-2xl sm:text-3xl mb-4'
 							titulo={dat.titulo}
 							texto={dat.texto}
 							referencia={dat.referencia}
