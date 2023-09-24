@@ -7,16 +7,16 @@ html {
 @tailwind components;
 @layer components {
 	.btn-menu {
-		@apply lg:bg-blue-700 lg:bg-gradient-to-r from-violet-800 to-blue-700 lg:no-underline underline underline-offset-4;
+		@apply lg:bg-gradient-to-r from-violet-800 to-[#013f9b] lg:no-underline underline underline-offset-4;
 	}
 	.btn-menu2 {
-		@apply lg:bg-blue-700 lg:bg-gradient-to-r from-violet-500 to-blue-700  lg:no-underline underline underline-offset-4;
+		@apply  lg:bg-gradient-to-r from-violet-500 to-blue-700  lg:no-underline underline underline-offset-4;
 	}
 	.btn-menu3 {
-		@apply lg:bg-blue-800 lg:bg-gradient-to-r from-indigo-400 to-blue-800 lg:no-underline underline underline-offset-4;
+		@apply  lg:bg-gradient-to-r from-violet-400 to-blue-800 lg:no-underline underline underline-offset-4;
 	}
 	.btn_sidebar {
-		@apply transition-colors duration-1000 lg:absolute  tracking-[2.2px] lg:py-1 lg:pl-4  hover:shadow-slate-50  hover:shadow-md rounded-l-md;
+		@apply transition-colors duration-1000 lg:absolute  tracking-[2.2px] py-1 px-2 lg:pl-4  hover:shadow-accent hover:shadow-md rounded-md lg:rounded-l-md lg:rounded-r-none;
 	}
 	.form-inputs {
 		@apply block focus:outline-none focus:border-white focus:border-2 border rounded-md px-4 appearance-none bg-transparent w-full;

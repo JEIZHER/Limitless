@@ -20,7 +20,7 @@ const Observer = () => {
 							? 'btn-menu2'
 							: id === 'two'
 							? 'btn-menu3'
-							: 'btn-menu'
+							: 'btn-menu2'
 					menuLink.classList.add(activeStyle)
 				}
 			})

@@ -4,14 +4,15 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'pic01': "url('/pic01.jpg')",
-        'intro':"url('/intro.svg')"
+        'pic01': "url('/pic01.webp')",
+        'intro':"url('/intro.svg')",
+        'intro2':"url('/fondo-red.webp')"
       },
       colors: {
         primary: '#16425b',
         secundary: '#81c3d7',
         wall: '#d9dcd6',
-        accent: '#2f6690',
+        accent: '#05fdfe',
         extra: '#3a7ca5'
       }
     },

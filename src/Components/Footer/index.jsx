@@ -10,6 +10,9 @@ const Footer = () => {
 				<li className='md:pl-2 mt-2 md:mt-0 md:border-l md:border-l-black'>
 					Design: <a href='#'>Joseph Izarra</a>
 				</li>
+				<li className="md:pl-2 md:border-l md:border-l-black">
+					Imagen de <a href="https://www.freepik.es/vector-gratis/fondo-conexion-red-degradado_12789069.htm#page=2&query=fondo%20internet&position=24&from_view=keyword&track=ais">Freepik</a>
+				</li>
 			</ul>
 		</footer>
 	)
