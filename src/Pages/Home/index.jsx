@@ -6,6 +6,7 @@ import Card from '../../Components/Card'
 import Observer from '../../Utils/Observer'
 import Carousel from '../../Components/Carousel'
 import useFetch from '../../Hooks/useFetch'
+import {webSocket}from '../../Hooks/useWebSocket'
 
 function Home() {
 	useEffect(() => {
@@ -149,10 +150,11 @@ function Home() {
 			),
 		},
 	]
+	//const data_sec_3 = webSocket()
 	const data_Headers = [
 		{
 			sizeTittle: 'text-2xl sm:text-3xl  mb-4',
-			titulo: 'WHO WE ARE',
+			titulo: 'NEWS',
 			texto:
 				'Phasellus convallis elit id ullamcorper pulvinar. Duis aliquamturpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus,lacus eget hendrerit bibendum, urna est aliquam sem, sit ametimperdiet est velit quis lorem.',
 			background: 'h-full  bg-gradient-to-l from-violet-500 to-blue-700',
@@ -163,7 +165,7 @@ function Home() {
 		},
 		{
 			sizeTittle: 'text-2xl font-bold mb-4 sm:text-3xl  mb-4',
-			titulo: 'WHAT WE DO',
+			titulo: 'CRIPTOS',
 			texto:
 				'Phasellus convallis elit id ullamcorper pulvinar. Duis aliquamturpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus,lacus eget hendrerit bibendum, urna est aliquam sem, sit ametimperdiet est velit quis lorem.',
 			background: 'h-full bg-gradient-to-l from-blue-400 to-blue-800 ',
@@ -186,7 +188,7 @@ function Home() {
 		'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false&locale=en'
 	)
 	return (
-		<>
+		<> 	
 			<Sidebar />
 
 			<div className='text-sm  text-gray-200  sm:text-base lg:ml-[200px]'>

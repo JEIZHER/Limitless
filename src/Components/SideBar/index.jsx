@@ -17,13 +17,13 @@ const Sidebar = () => {
 					</a>
 				</li>
 				<li>
-					<a href='#one' className='btn_sidebar lg:pr-[84px]'>
-						WHO WE ARE
+					<a href='#one' className='btn_sidebar lg:pr-[134px]'>
+						NEWS
 					</a>
 				</li>
 				<li>
-					<a href='#two' className='btn_sidebar lg:pr-[82px]'>
-						WHAT WE DO
+					<a href='#two' className='btn_sidebar lg:pr-[116px]'>
+						CRIPTOS
 					</a>
 				</li>
 				<li>
