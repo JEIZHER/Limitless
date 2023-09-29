@@ -1,17 +1,16 @@
-import { useEffect } from 'react'
-import Section from '../../Components/Section'
-import Form from '../../Components/Form'
-import Sidebar from '../../Components/SideBar'
-import Card from '../../Components/Card'
+import React, { useEffect,Suspense } from 'react'
+const Form = React.lazy(() => import('../../Components/Form'))
+const CardsCryptos = React.lazy(() => import('../../Components/CardsCryptos'))
+const CardsNews = React.lazy(() => import('../../Components/CardsNews'))
 import Observer from '../../Utils/Observer'
-import Carousel from '../../Components/Carousel'
-import useFetch from '../../Hooks/useFetch'
-import {webSocket}from '../../Hooks/useWebSocket'
+//import Carousel from '../../Components/Carousel'
+//import useFetch from '../../Hooks/useFetch'
+// import {webSocket}from '../../Hooks/useWebSocket'
+//import Boton from '../../Components/Boton'
+import Loading from '../../Utils/Loading'
 
 function Home() {
-	useEffect(() => {
-		Observer()
-	}, [])
+	
 
 	const data_sec_1 = [
 		{
@@ -151,55 +150,27 @@ function Home() {
 		},
 	]
 	//const data_sec_3 = webSocket()
-	const data_Headers = [
-		{
-			sizeTittle: 'text-2xl sm:text-3xl  mb-4',
-			titulo: 'NEWS',
-			texto:
-				'Phasellus convallis elit id ullamcorper pulvinar. Duis aliquamturpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus,lacus eget hendrerit bibendum, urna est aliquam sem, sit ametimperdiet est velit quis lorem.',
-			background: 'h-full  bg-gradient-to-l from-violet-500 to-blue-700',
-			referencia: '',
-			data_sec: data_sec_1,
-			marco: '1',
-			id: 'one',
-		},
-		{
-			sizeTittle: 'text-2xl font-bold mb-4 sm:text-3xl  mb-4',
-			titulo: 'CRIPTOS',
-			texto:
-				'Phasellus convallis elit id ullamcorper pulvinar. Duis aliquamturpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus,lacus eget hendrerit bibendum, urna est aliquam sem, sit ametimperdiet est velit quis lorem.',
-			background: 'h-full bg-gradient-to-l from-blue-400 to-blue-800 ',
-			referencia: '#',
-			data_sec: data_sec_2,
-			marco: '2',
-			id: 'two',
-		},
-		{
-			sizeTittle: 'text-2xl font-bold mb-4',
-			titulo: 'GET IN TOUCH',
-			texto:
-				'Phasellus convallis elit id ullamcorper pulvinar. Duis aliquamturpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus,lacus eget hendrerit bibendum, urna est aliquam sem, sit ametimperdiet est velit quis lorem.',
-			background: 'h-full  bg-gradient-to-l from-violet-500 to-blue-700',
-			objet: <Form />,
-			id: 'three',
-		},
-	]
-	const { data, loading } = useFetch(
-		'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false&locale=en'
-	)
-	return (
-		<> 	
-			<Sidebar />
 
-			<div className='text-sm  text-gray-200  sm:text-base lg:ml-[200px]'>
-				<section id='intro' className='z-0 bg-intro bg-cover bg-fixed '>
-					<div className=' flex flex-col justify-between w-auto h-screen pb-10 px-7 pt-12  bg-intro2 opacity-95 bg-cover z-0 sm:pt-24 sm:px-16  lg:pt-[200px]  '>
-						<Card
-							sizeTittle='text-3xl sm:text-5xl lg:text-6xl text-white  mb-6'
-							titulo='X-Limitless'
-							texto='Cripto conexiones sin limites'
-						/>
-						{loading ? (
+	// const { data, loading } = useFetch(
+	// 	'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false&locale=en'
+	// )
+	return (
+		<>
+			<div className=' text-sm  text-gray-200  sm:text-base lg:ml-[200px]'>
+			
+				<section 
+				id='intro'
+				 className='bg-intro bg-cover bg-fixed h-screen'>
+					<div className=' flex flex-col justify-between w-auto h-screen pb-10  pt-12 px-7 sm:px-16 bg-intro2 opacity-95 bg-cover sm:pt-24  lg:pt-[200px]  '>
+						<div className=' sm:flex sm:flex-col sm:space-x-3 '>
+							<h1 className='text-3xl sm:text-5xl lg:text-6xl text-white  mb-6 font-bold'>
+								X-Limitless
+							</h1>
+							<p className='select-none mb-7'>Cripto conexiones sin limites</p>
+						</div>
+						
+
+						{/* {loading ? (
 							<div role='status' className='ml-[40%] mb-[5%]'>
 								<svg
 									aria-hidden='true'
@@ -219,26 +190,93 @@ function Home() {
 								</svg>
 								<span className=''>Loading...</span>
 							</div>
-						) : (
-							<Carousel data={data} />
-						)}
+						) : null
+							
+						}
+						 <Carousel data={data} />  */}
 					</div>
 				</section>
 
-				{data_Headers?.map((data, index) => (
-					<Section
-						key={index}
-						id={data.id}
-						background={data.background}
-						marco={data.marco}
-						sizeTittle={data.sizeTittle}
-						titulo={data.titulo}
-						texto={data.texto}
-						data_sec={data.data_sec}
-						referencia={data.referencia}
-						objet={data.objet}
-					/>
-				))}
+				
+					<section
+						id='one'
+						className='flex flex-col justify-center pb-10 px-7 pt-12 sm:pt-24 lg:pt-12 sm:px-16 h-full  bg-gradient-to-l from-violet-500 to-blue-700'
+					>
+						<div className=' sm:flex sm:items-center sm:space-x-3 '>
+							<h1 className='text-2xl sm:text-3xl  mb-4'>NEWS</h1>
+						</div>
+						<p className='select-none mb-7'>
+							Phasellus convallis elit id ullamcorper pulvinar. Duis
+							aliquamturpis mauris, eu ultricies erat malesuada quis. Aliquam
+							dapibus,lacus eget hendrerit bibendum, urna est aliquam sem, sit
+							ametimperdiet est velit quis lorem
+						</p>
+						<Suspense fallback={<Loading />}>
+						{data_sec_1?.map((dat, index) => (
+							<CardsNews
+								key={index}
+								//sizeTittle='text-2xl sm:text-3xl mb-4'
+								titulo={dat.titulo}
+								texto={dat.texto}
+								referencia={dat.referencia}
+								imagen={dat.imagen}
+								//icon={dat.icon}
+								//marco='1'
+							/>
+						))}
+						</Suspense>
+					</section>
+
+					<section
+						id='two'
+						className='flex flex-col justify-center pb-10 px-7 pt-12 sm:pt-24 lg:pt-12 sm:px-16  h-full bg-gradient-to-l from-blue-400 to-blue-800'
+					>
+						<div className=' sm:flex sm:items-center sm:space-x-3 '>
+							<h1 className='text-2xl font-bold mb-4 sm:text-3xl'>CRYPTOS</h1>
+						</div>
+						<p className='select-none mb-7'>
+							Phasellus convallis elit id ullamcorper pulvinar. Duis
+							aliquamturpis mauris, eu ultricies erat malesuada quis. Aliquam
+							dapibus,lacus eget hendrerit bibendum, urna est aliquam sem, sit
+							ametimperdiet est velit quis lorem.
+						</p>
+						<div className='flex flex-col flex-wrap lg:flex-row border border-b-0 lg:border-r-0 lg:border-b-0 rounded-sm mb-8'>
+						<Suspense fallback={<Loading />}>
+							{data_sec_2?.map((dat, index) => (
+								<CardsCryptos
+									key={index}
+									titulo={dat.titulo}
+									texto={dat.texto}
+									referencia='#'	
+									icon={dat.icon}
+								/>
+							))}
+							</Suspense>
+						</div>
+					</section>
+
+					<section
+						id='three'
+						className='flex flex-col justify-center pb-10 px-7 pt-12 sm:pt-24 lg:pt-12 sm:px-16 h-full  bg-gradient-to-l from-violet-500 to-blue-700'
+					>
+						<div className=' sm:flex sm:items-center sm:space-x-3 '>
+							<h1 className='text-2xl font-bold mb-4'>GET IN TOUCH</h1>
+						</div>
+						<p className='select-none mb-7'>
+							Phasellus convallis elit id ullamcorper pulvinar. Duis
+							aliquamturpis mauris, eu ultricies erat malesuada quis. Aliquam
+							dapibus,lacus eget hendrerit bibendum, urna est aliquam sem, sit
+							ametimperdiet est velit quis lorem.
+						</p>
+						<Suspense fallback={<Loading />}>
+						<Form />
+						</Suspense>
+					</section>
+				
+				 { useEffect(() => {
+	  	            Observer()
+	             }, [])}
+				
 			</div>
 		</>
 	)
