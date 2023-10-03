@@ -1,3 +1,4 @@
+import React from 'react'
 import Boton from '../Boton'
 
 const CardsNews = (props) => {
@@ -30,4 +31,4 @@ const CardsNews = (props) => {
 		</div>
 	)
 }
-export default CardsNews
+export default React.memo(CardsNews)

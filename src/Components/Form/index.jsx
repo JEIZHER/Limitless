@@ -1,3 +1,4 @@
+import React from 'react'
 import Boton from '../Boton'
 const Form = () => {	
 	return (
@@ -101,4 +102,4 @@ const Form = () => {
 		</div>
 	)
 }
-export default Form
+export default React.memo(Form)

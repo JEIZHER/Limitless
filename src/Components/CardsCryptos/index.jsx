@@ -1,8 +1,12 @@
+import React ,{useContext,} from 'react'
 import Boton from '../Boton'
+// import {ContextDatCryptos} from '../../Context'
 
 const CardsCryptos = (props) => {
+	// const context =useContext(ContextDatCryptos)
+    // console.log(context.BTC) 
 		return (
-		<div className='lg:flex lg:w-1/2'>
+		<div id={props.id} className='lg:flex lg:w-1/2 '>
 
 			<div className='px-6 pt-8 pb-1 border-b lg:border-r'>
 				<div className=' sm:flex sm:items-center sm:space-x-3 '>
@@ -19,4 +23,4 @@ const CardsCryptos = (props) => {
 		</div>
 	)
 }
-export default CardsCryptos
+export default React.memo(CardsCryptos)

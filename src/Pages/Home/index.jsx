@@ -1,18 +1,19 @@
-import React, { useEffect,Suspense } from 'react'
+import React, { useEffect,Suspense,useContext } from 'react'
 const Form = React.lazy(() => import('../../Components/Form'))
 const CardsCryptos = React.lazy(() => import('../../Components/CardsCryptos'))
 const CardsNews = React.lazy(() => import('../../Components/CardsNews'))
 import Observer from '../../Utils/Observer'
-//import Carousel from '../../Components/Carousel'
-//import useFetch from '../../Hooks/useFetch'
-// import {webSocket}from '../../Hooks/useWebSocket'
-//import Boton from '../../Components/Boton'
+import Carousel from '../../Components/Carousel'
+import useFetch from '../../Hooks/useFetch'
 import Loading from '../../Utils/Loading'
+//import {ContextDatCryptos} from '../../Context'
+// import { webSocket } from '../../Hooks/useWebSocket'
+
 
 function Home() {
-	
-
-	const data_sec_1 = [
+	//const context =useContext(ContextDatCryptos)
+   
+   	const data_sec_1 = [
 		{
 			titulo: 'Sed ipsum dolor',
 			texto:
@@ -149,11 +150,10 @@ function Home() {
 			),
 		},
 	]
-	//const data_sec_3 = webSocket()
-
-	// const { data, loading } = useFetch(
-	// 	'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false&locale=en'
-	// )
+	
+	 const { data, loading } = useFetch(
+	 	'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false&locale=en'
+	 )
 	return (
 		<>
 			<div className=' text-sm  text-gray-200  sm:text-base lg:ml-[200px]'>
@@ -170,7 +170,7 @@ function Home() {
 						</div>
 						
 
-						{/* {loading ? (
+						 {loading ? (
 							<div role='status' className='ml-[40%] mb-[5%]'>
 								<svg
 									aria-hidden='true'
@@ -193,17 +193,16 @@ function Home() {
 						) : null
 							
 						}
-						 <Carousel data={data} />  */}
+						 <Carousel data={data} />  
 					</div>
 				</section>
-
 				
-					<section
+				<section
 						id='one'
 						className='flex flex-col justify-center pb-10 px-7 pt-12 sm:pt-24 lg:pt-12 sm:px-16 h-full  bg-gradient-to-l from-violet-500 to-blue-700'
 					>
 						<div className=' sm:flex sm:items-center sm:space-x-3 '>
-							<h1 className='text-2xl sm:text-3xl  mb-4'>NEWS</h1>
+							<h1 className='text-2xl font-bold sm:text-3xl  mb-4'>NEWS</h1>
 						</div>
 						<p className='select-none mb-7'>
 							Phasellus convallis elit id ullamcorper pulvinar. Duis
@@ -215,19 +214,16 @@ function Home() {
 						{data_sec_1?.map((dat, index) => (
 							<CardsNews
 								key={index}
-								//sizeTittle='text-2xl sm:text-3xl mb-4'
 								titulo={dat.titulo}
 								texto={dat.texto}
 								referencia={dat.referencia}
 								imagen={dat.imagen}
-								//icon={dat.icon}
-								//marco='1'
 							/>
 						))}
 						</Suspense>
-					</section>
+				</section>
 
-					<section
+				<section
 						id='two'
 						className='flex flex-col justify-center pb-10 px-7 pt-12 sm:pt-24 lg:pt-12 sm:px-16  h-full bg-gradient-to-l from-blue-400 to-blue-800'
 					>
@@ -241,21 +237,22 @@ function Home() {
 							ametimperdiet est velit quis lorem.
 						</p>
 						<div className='flex flex-col flex-wrap lg:flex-row border border-b-0 lg:border-r-0 lg:border-b-0 rounded-sm mb-8'>
-						<Suspense fallback={<Loading />}>
+						<Suspense fallback={<Loading />}>						  
 							{data_sec_2?.map((dat, index) => (
 								<CardsCryptos
 									key={index}
-									titulo={dat.titulo}
-									texto={dat.texto}
+									id={index}
+									titulo={dat.s}
+									texto={dat.v}
 									referencia='#'	
-									icon={dat.icon}
+									icon={dat.s}
 								/>
 							))}
 							</Suspense>
 						</div>
-					</section>
+				</section>
 
-					<section
+				<section
 						id='three'
 						className='flex flex-col justify-center pb-10 px-7 pt-12 sm:pt-24 lg:pt-12 sm:px-16 h-full  bg-gradient-to-l from-violet-500 to-blue-700'
 					>
@@ -271,7 +268,7 @@ function Home() {
 						<Suspense fallback={<Loading />}>
 						<Form />
 						</Suspense>
-					</section>
+				</section>
 				
 				 { useEffect(() => {
 	  	            Observer()

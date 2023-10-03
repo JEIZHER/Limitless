@@ -6,7 +6,7 @@ const webSocket = ()=>{
         ws.onmessage=(event)=>{
         let objeto = JSON.parse(event.data) 
         setObjet(objeto)
-        console.log(objeto)  
+         
         }
     return objet 
     

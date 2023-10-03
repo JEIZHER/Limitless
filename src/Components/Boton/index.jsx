@@ -1,3 +1,4 @@
+import React from "react"
 const Boton = ({ referencia, Titulo }) => {
 	return (
 		<ul>
@@ -12,4 +13,4 @@ const Boton = ({ referencia, Titulo }) => {
 		</ul>
 	)
 }
-export default Boton
+export default React.memo(Boton)
