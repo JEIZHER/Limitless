@@ -1,25 +1,21 @@
-import React ,{useContext,} from 'react'
-import Boton from '../Boton'
-// import {ContextDatCryptos} from '../../Context'
+import React from 'react'
 
 const CardsCryptos = (props) => {
-	// const context =useContext(ContextDatCryptos)
-    // console.log(context.BTC) 
-		return (
-		<div id={props.id} className='lg:flex lg:w-1/2 '>
-
-			<div className='px-6 pt-8 pb-1 border-b lg:border-r'>
-				<div className=' sm:flex sm:items-center sm:space-x-3 '>
-					{props.icon && <span className='block mb-5 sm:mb-3'>{props.icon}</span>}
-					<h1 className= ' text-2xl sm:text-3xl mb-4 font-bold'>{props.titulo}</h1>	
-				</div>
-			
-				<p className='select-none mb-7'>{props.texto}</p>
-				{props.referencia && (
-					<Boton referencia={props.referencia} Titulo='LEARN MORE' />		
-					
-				)}
+	return (
+		<div id={props.id} className='px-4 pt-8 pb-1 w-[230px] text-slate-800 border rounded-lg bg-slate-200 bg-opacity-20 '>
+			<div className='hover:shadow-accent hover:shadow-md cursor-pointer flex items-center  space-x-3 bg-slate-300  rounded-lg pl-2'>
+				<img src={props.icon} alt="props.id" className='h-7 w-7' />
+				<h1 className=' text-2xl sm:text-3xl mb-1 font-bold'>{props.symbol}</h1>
 			</div>
+			<div className=' my-3'>
+			<p>Price :</p>
+			<p className='text-xl font-bold ' >{props.price}</p>	
+			</div>
+			<div className=' mb-3'>
+			<p>Volume :</p>
+			<p></p>
+			</div>
+			
 		</div>
 	)
 }

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 
 const useFetch = (url) => {
 	const [data, setData] = useState([])
+	const [dataInit, setDataInit] = useState([])
 	const [loading , setLoading] =useState(true)
 	const [error, setError]=useState(null)
 	const [controller,setController]=useState(null)
@@ -14,6 +15,7 @@ const useFetch = (url) => {
 					.then((data) => setData(data))
 					.catch((error)=>{if(error.name==='AbortError'){console.log('Request canceled')}else {setError(error)}})
 					.finally(()=>setLoading(false))
+
 				return ()=> abortController.abort()	
 			}, []) 
 	const handleCancelRequest = ()=>{
@@ -23,6 +25,6 @@ const useFetch = (url) => {
 			setError('Request canceled')
 		}
 	}		
-	return { data , loading , error, handleCancelRequest }
+	return { data , dataInit, loading , error, handleCancelRequest }
 }
 export default useFetch
