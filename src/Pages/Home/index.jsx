@@ -1,7 +1,8 @@
 import React, { useEffect,Suspense,useContext } from 'react'
 const Form = React.lazy(() => import('../../Components/Form'))
-const CardsCryptos = React.lazy(() => import('../../Components/CardsCryptos'))
+// const CardsCryptos = React.lazy(() => import('../../Components/CardsCryptos'))
 const CardsNews = React.lazy(() => import('../../Components/CardsNews'))
+const BarraBusqueda = React.lazy(() => import('../../Components/BarraBusqueda'))
 import Observer from '../../Utils/Observer'
 import Carousel from '../../Components/Carousel'
 import useFetch from '../../Hooks/useFetch'
@@ -36,13 +37,13 @@ function Home() {
 	]
 
 
-	 const { data,dataInit, loading } = useFetch(
-	 	'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=20&page=1&sparkline=false&locale=en'
+	 const { data, loading } = useFetch(
+	 	'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en'
 	 )
 	// console.log(data)
 	return (
 		<>
-			<div className=' text-sm  text-gray-200  sm:text-base lg:ml-[200px]'>
+			<div className=' text-sm  text-gray-200  sm:text-base lg:ml-[200px] min-w-[420px]'>
 			
 				<section 
 				id='intro'
@@ -120,18 +121,9 @@ function Home() {
 						<p className='select-none mb-7'>
 						Las criptomonedas son monedas digitales que utilizan la criptografía para asegurar y verificar transacciones. Aunque tienen el potencial de revolucionar la forma en que se realizan las transacciones financieras, también hay algunos riesgos asociados con ellas. Debido a su naturaleza descentralizada y no regulada, las criptomonedas pueden ser vulnerables a la volatilidad del mercado, el fraude y el robo.
 						</p>
-						<div className='flex flex-row flex-wrap gap-2 justify-center mb-8'>
-						<Suspense fallback={<Loading />}>						  
-							{data?.map((dat, index) => (
-								<CardsCryptos
-									key={index}
-									id={dat.symbol.toUpperCase()+'USDT'}
-									symbol={dat.symbol.toUpperCase()}
-									price={dat.current_price}
-									//referencia='#'	
-									icon={dat.image}
-								/>
-							))}
+						<div >
+						<Suspense fallback={<Loading />}>	
+						    <BarraBusqueda data={data}/>					  
 							</Suspense>
 						</div>
 				</section>
