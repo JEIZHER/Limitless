@@ -1,4 +1,4 @@
-import React, { useEffect,Suspense,useContext } from 'react'
+import React, { useEffect, Suspense } from 'react'
 const Form = React.lazy(() => import('../../Components/Form'))
 // const CardsCryptos = React.lazy(() => import('../../Components/CardsCryptos'))
 const CardsNews = React.lazy(() => import('../../Components/CardsNews'))
@@ -8,46 +8,39 @@ import Carousel from '../../Components/Carousel'
 import useFetch from '../../Hooks/useFetch'
 import Loading from '../../Utils/Loading'
 
-
 function Home() {
-
-   
-   	const data_sec_1 = [
+	const data_sec_1 = [
 		{
-			titulo: 'Sed ipsum dolor',
+			titulo: 'Bitcoin and Microcommerce',
 			texto:
-				'Phasellus convallis elit id ullamcorper pulvinar. Duis aliquamurpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.',
+				' Microcommerce is one of the areas where Bitcoin has been used extensively. It has enabled small businesses to conduct transactions without the need for intermediaries, thereby reducing costs and increasing efficiency.',
 			imagen: '/pic01.webp',
 			referencia: '#',
 		},
 		{
-			titulo: 'Feugiat consequat',
+			titulo: 'Bitcoin and security',
 			texto:
-				'Phasellus convallis elit id ullamcorper pulvinar. Duis aliquamurpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.',
+				' Due to its decentralized and unregulated nature, Bitcoin can be vulnerable to market volatility, fraud, and theft. However, there are many measures that can be taken to mitigate these risks, such as using secure wallets and exchanges, keeping private keys safe, and staying informed about the latest security threats',
 			imagen: '/pic01.webp',
 			referencia: '#',
 		},
 		{
-			titulo: 'Ultricies aliquam',
+			titulo: 'What is Bitcoin?',
 			texto:
-				'Phasellus convallis elit id ullamcorper pulvinar. Duis aliquamurpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.',
+				'Bitcoin is a decentralized digital currency that uses cryptography to secure and verify transactions.',
 			imagen: '/pic01.webp',
 			referencia: '#',
 		},
 	]
 
-
-	 const { data, loading } = useFetch(
-	 	'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en'
-	 )
+	const { data, loading } = useFetch(
+		'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en'
+	)
 	// console.log(data)
 	return (
 		<>
 			<div className=' text-sm  text-gray-200  sm:text-base lg:ml-[200px] min-w-[420px]'>
-			
-				<section 
-				id='intro'
-				 className='bg-intro bg-cover bg-fixed h-screen'>
+				<section id='intro' className='bg-intro bg-cover bg-fixed h-screen'>
 					<div className=' flex flex-col justify-between w-auto h-screen pb-10  pt-12 px-7 sm:px-16 bg-intro2 opacity-95 bg-cover sm:pt-24  lg:pt-[200px]  '>
 						<div className=' sm:flex sm:flex-col sm:space-x-3 '>
 							<h1 className='text-3xl sm:text-5xl lg:text-6xl text-white  mb-6 font-bold'>
@@ -55,9 +48,8 @@ function Home() {
 							</h1>
 							<p className='select-none mb-7'>Cripto conexiones sin limites</p>
 						</div>
-						
 
-						 {loading ? (
+						{loading ? (
 							<div role='status' className='ml-[40%] mb-[5%]'>
 								<svg
 									aria-hidden='true'
@@ -77,28 +69,22 @@ function Home() {
 								</svg>
 								<span className=''>Loading...</span>
 							</div>
-						) : null
-							
-						}
-						 <Carousel data={data.slice(1,5)} />  
-						
+						) : null}
+						<Carousel data={data.slice(1,5)} />  
 					</div>
 				</section>
-				
+
 				<section
-						id='one'
-						className='flex flex-col justify-center pb-10 px-7 pt-12 sm:pt-24 lg:pt-12 sm:px-16 h-full  bg-gradient-to-l from-violet-500 to-blue-700'
-					>
-						<div className=' sm:flex sm:items-center sm:space-x-3 '>
-							<h1 className='text-2xl font-bold sm:text-3xl  mb-4'>NEWS</h1>
-						</div>
-						<p className='select-none mb-7'>
-							Phasellus convallis elit id ullamcorper pulvinar. Duis
-							aliquamturpis mauris, eu ultricies erat malesuada quis. Aliquam
-							dapibus,lacus eget hendrerit bibendum, urna est aliquam sem, sit
-							ametimperdiet est velit quis lorem
-						</p>
-						<Suspense fallback={<Loading />}>
+					id='one'
+					className='flex flex-col justify-center pb-10 px-7 pt-12 sm:pt-24 lg:pt-12 sm:px-16 h-full  bg-gradient-to-l from-violet-500 to-blue-700'
+				>
+					<div className=' sm:flex sm:items-center sm:space-x-3 '>
+						<h1 className='text-2xl font-bold sm:text-3xl  mb-4'>NEWS</h1>
+					</div>
+					<p className='select-none mb-7'>
+						Stay up-to-date with our latest news and updates
+					</p>
+					<Suspense fallback={<Loading />}>
 						{data_sec_1?.map((dat, index) => (
 							<CardsNews
 								key={index}
@@ -108,49 +94,60 @@ function Home() {
 								imagen={dat.imagen}
 							/>
 						))}
-						</Suspense>
+					</Suspense>
 				</section>
 
 				<section
-						id='two'
-						className='flex flex-col justify-center pb-10 px-7 pt-12 sm:pt-24 lg:pt-12 sm:px-16  h-full bg-gradient-to-l from-blue-400 to-blue-800'
-					>
-						<div className=' sm:flex sm:items-center sm:space-x-3 '>
-							<h1 className='text-2xl font-bold mb-4 sm:text-3xl'>CRYPTOS</h1>
-						</div>
-						<p className='select-none mb-7'>
-						Las criptomonedas son monedas digitales que utilizan la criptografía para asegurar y verificar transacciones. Aunque tienen el potencial de revolucionar la forma en que se realizan las transacciones financieras, también hay algunos riesgos asociados con ellas. Debido a su naturaleza descentralizada y no regulada, las criptomonedas pueden ser vulnerables a la volatilidad del mercado, el fraude y el robo.
-						</p>
-						<div >
-						<Suspense fallback={<Loading />}>	
-						    <BarraBusqueda data={data}/>					  
-							</Suspense>
-						</div>
-				</section>
-
-				<section
-						id='three'
-						className='flex flex-col justify-center pb-10 px-7 pt-12 sm:pt-24 lg:pt-12 sm:px-16 h-full  bg-gradient-to-l from-violet-500 to-blue-700'
-					>
-						<div className=' sm:flex sm:items-center sm:space-x-3 '>
-							<h1 className='text-2xl font-bold mb-4'>GET IN TOUCH</h1>
-						</div>
-						<p className='select-none mb-7'>
-							Phasellus convallis elit id ullamcorper pulvinar. Duis
-							aliquamturpis mauris, eu ultricies erat malesuada quis. Aliquam
-							dapibus,lacus eget hendrerit bibendum, urna est aliquam sem, sit
-							ametimperdiet est velit quis lorem.
-						</p>
+					id='two'
+					className='flex flex-col justify-center pb-10 px-7 pt-12 sm:pt-24 lg:pt-12 sm:px-16  h-full bg-gradient-to-l from-blue-400 to-blue-800'
+				>
+					<div className=' sm:flex sm:items-center sm:space-x-3 '>
+						<h1 className='text-2xl font-bold mb-4 sm:text-3xl'>CRYPTOS</h1>
+					</div>
+					<p className='select-none mb-7'>
+						Are you interested in exploring the world of cryptocurrency trading?
+						Cryptocurrencies are digital currencies that use cryptography to
+						secure and verify transactions. They have the potential to
+						revolutionize the way financial transactions are conducted, and many
+						people have already started investing in them. If you’re curious
+						about how to get started with cryptocurrency trading, there are many
+						resources available online that can help you learn more. From online
+						courses to forums and social media groups, there are many ways to
+						connect with other traders and learn from their experiences. So why
+						not take the first step and start exploring the exciting world of
+						cryptocurrency trading today?
+					</p>
+					<div>
 						<Suspense fallback={<Loading />}>
-						<Form />
+							<BarraBusqueda data={data} />
 						</Suspense>
+					</div>
 				</section>
-				
-				 { useEffect(() => {
-	  	            Observer()
-				
-	             }, [])}
-				
+
+				<section
+					id='three'
+					className='flex flex-col justify-center pb-10 px-7 pt-12 sm:pt-24 lg:pt-12 sm:px-16 h-full  bg-gradient-to-l from-violet-500 to-blue-700'
+				>
+					<div className=' sm:flex sm:items-center sm:space-x-3 '>
+						<h1 className='text-2xl font-bold mb-4'>GET IN TOUCH</h1>
+					</div>
+					<p className='select-none mb-7'>
+						“We would love to hear from you! If you have any questions,
+						comments, or concerns, please don’t hesitate to reach out to us. Our
+						team is dedicated to providing you with the best possible
+						experience, and we are always here to help. You can contact us by
+						filling out the form below, sending us an email at
+						cripto-limitless.gmail.com. We look forward to hearing from you
+						soon!”
+					</p>
+					<Suspense fallback={<Loading />}>
+						<Form />
+					</Suspense>
+				</section>
+
+				{useEffect(() => {
+					Observer()
+				}, [])}
 			</div>
 		</>
 	)

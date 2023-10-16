@@ -1,9 +1,20 @@
-import React from 'react'
-import Boton from '../Boton'
+import React, { useRef } from 'react'
+ import emailjs from '@emailjs/browser'
 const Form = () => {	
+	const form = useRef()
+	const sendEmail = (e) => {
+		e.preventDefault();
+	
+		emailjs.sendForm(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, form.current, import.meta.env.VITE_PUBLIC_KEY)
+		  .then((result) => {
+			  console.log(result.text)
+		  }, (error) => {
+			  console.log(error.text)
+		  })
+	  }
 	return (
 		<div className='lg:flex lg:gap-6'  >
-			<form method='post' action='#'>
+			<form ref={form} onSubmit={sendEmail}>
 				<div className='flex flex-col mb-8 '>
 					<div className='sm:flex sm:flex-row justify-between'>
 						<div className='pb-5  sm:w-[calc(50%-10px)]'>
@@ -16,6 +27,7 @@ const Form = () => {
 								id='name'
 								autoComplete='given-name'
 								className='form-inputs h-10 '
+								required
 							/>
 						</div>
 						<div className=' pb-5  sm:w-[calc(50%-10px)]'>
@@ -28,6 +40,7 @@ const Form = () => {
 								id='email'
 								autoComplete='email'
 								className='form-inputs h-10'
+								required
 							/>
 						</div>
 					</div>
@@ -41,11 +54,14 @@ const Form = () => {
 							id='message'
 							rows='5'
 							className='form-inputs py-3 resize-none'
+							required
 						></textarea>
 					</div>
 				</div>
-				<Boton referencia='#' Titulo='SEND MESSAGE' />
+
+				<input type="submit" value="Send" className='flex flex-col min-w-[100px] max-w-[300px] items-center  border rounded-full mb-7  w-full py-2 text-[20px] font-bold tracking-[2.2px] sm:max-w-[250px] hover:shadow-accent hover:transition-shadow hover:shadow-md ' />
 			</form>
+	
 			<section className='pt-12 mt-12 border-t lg:pt-0 lg:mt-0 lg:border-l lg:border-t-0 lg:pl-6'>
 				<ul className='mb-8'>
 					<li>
@@ -60,7 +76,7 @@ const Form = () => {
 					</li>
 					<li className='mt-6'>
 						<h1 className='text-1xl font-bold mb-3'>Email</h1>
-						<a href='#'>user@untitled.tld</a>
+						<a href='#'>cripto-limitless.gmail.com</a>
 					</li>
 					<li className='mt-6'>
 						<h1 className='text-1xl font-bold mb-3'>Phone</h1>
