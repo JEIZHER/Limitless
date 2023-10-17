@@ -1,19 +1,28 @@
 import React, { useRef } from 'react'
- import emailjs from '@emailjs/browser'
-const Form = () => {	
+import emailjs from '@emailjs/browser'
+const Form = () => {
 	const form = useRef()
 	const sendEmail = (e) => {
-		e.preventDefault();
-	
-		emailjs.sendForm(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, form.current, import.meta.env.VITE_PUBLIC_KEY)
-		  .then((result) => {
-			  console.log(result.text)
-		  }, (error) => {
-			  console.log(error.text)
-		  })
-	  }
+		e.preventDefault()
+
+		emailjs
+			.sendForm(
+				import.meta.env.VITE_SERVICE_ID,
+				import.meta.env.VITE_TEMPLATE_ID,
+				form.current,
+				import.meta.env.VITE_PUBLIC_KEY
+			)
+			.then(
+				(result) => {
+					console.log(result.text)
+				},
+				(error) => {
+					console.log(error.text)
+				}
+			)
+	}
 	return (
-		<div className='lg:flex lg:gap-6'  >
+		<div className='lg:flex lg:gap-6'>
 			<form ref={form} onSubmit={sendEmail}>
 				<div className='flex flex-col mb-8 '>
 					<div className='sm:flex sm:flex-row justify-between'>
@@ -59,9 +68,13 @@ const Form = () => {
 					</div>
 				</div>
 
-				<input type="submit" value="Send" className='flex flex-col min-w-[100px] max-w-[300px] items-center  border rounded-full mb-7  w-full py-2 text-[20px] font-bold tracking-[2.2px] sm:max-w-[250px] hover:shadow-accent hover:transition-shadow hover:shadow-md ' />
+				<input
+					type='submit'
+					value='Send'
+					className='flex flex-col min-w-[100px] max-w-[300px] items-center  border rounded-full mb-7  w-full py-2 text-[20px] font-bold tracking-[2.2px] sm:max-w-[250px] hover:shadow-accent hover:transition-shadow hover:shadow-md '
+				/>
 			</form>
-	
+
 			<section className='pt-12 mt-12 border-t lg:pt-0 lg:mt-0 lg:border-l lg:border-t-0 lg:pl-6'>
 				<ul className='mb-8'>
 					<li>
@@ -86,28 +99,27 @@ const Form = () => {
 						<h1 className='text-1xl font-bold mb-3'>Social</h1>
 						<ul className='mb-8'>
 							<li className='inline-block pr-3'>
-								<a href='#'loading="lazy" className='fa-brands fa-twitter'>
+								<a href='#' loading='lazy' className='fa-brands fa-twitter'>
 									<span className='sr-only'>Twitter</span>
 								</a>
 							</li>
 							<li className='inline-block pr-3'>
-								<a href='#'loading="lazy" className='fa-brands fa-facebook'>
+								<a href='#' loading='lazy' className='fa-brands fa-facebook'>
 									<span className='sr-only'>Facebook</span>
 								</a>
 							</li>
 							<li className='inline-block pr-3'>
-								<a href='#'loading="lazy" className='fa-brands fa-github'>
+								<a href='#' loading='lazy' className='fa-brands fa-github'>
 									<span className='sr-only'>GitHub</span>
 								</a>
 							</li>
 							<li className='inline-block pr-3'>
-								<a href='#'loading="lazy" className='fa-brands fa-instagram'>
+								<a href='#' loading='lazy' className='fa-brands fa-instagram'>
 									<span className='sr-only'>Instagram</span>
 								</a>
 							</li>
 							<li className='inline-block pr-3'>
-								<a href='#'loading="lazy"
-								 className='fa-brands fa-linkedin'>
+								<a href='#' loading='lazy' className='fa-brands fa-linkedin'>
 									<span className='sr-only'>LinkedIn</span>
 								</a>
 							</li>

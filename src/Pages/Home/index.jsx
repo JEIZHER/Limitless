@@ -46,7 +46,7 @@ function Home() {
 							<h1 className='text-3xl sm:text-5xl lg:text-6xl text-white  mb-6 font-bold'>
 								X-Limitless
 							</h1>
-							<p className='select-none mb-7'>Cripto conexiones sin limites</p>
+							<p className='select-none mb-7'>Cripto conexiones sin limites (testing website)</p>
 						</div>
 
 						{loading ? (
