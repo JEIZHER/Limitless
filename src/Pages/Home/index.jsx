@@ -36,7 +36,7 @@ function Home() {
 	const { data, loading } = useFetch(
 		'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en'
 	)
-	// console.log(data)
+	
 	return (
 		<>
 			<div className=' text-sm  text-gray-200  sm:text-base lg:ml-[200px] min-w-[420px]'>

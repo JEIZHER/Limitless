@@ -4,7 +4,8 @@ const Form = () => {
 	const form = useRef()
 	const sendEmail = (e) => {
 		e.preventDefault()
-
+		const btn = document.getElementById('B_send')
+		btn.value='Sending...'
 		emailjs
 			.sendForm(
 				import.meta.env.VITE_SERVICE_ID,
@@ -14,10 +15,12 @@ const Form = () => {
 			)
 			.then(
 				(result) => {
-					console.log(result.text)
+					btn.value='SEND'
+					alert('The message has been sent successfully')
 				},
 				(error) => {
-					console.log(error.text)
+					btn.value='SEND'
+					alert('Apologies, an error has occurred'+ error.text)
 				}
 			)
 	}
@@ -37,6 +40,7 @@ const Form = () => {
 								autoComplete='given-name'
 								className='form-inputs h-10 '
 								required
+								placeholder='Name'
 							/>
 						</div>
 						<div className=' pb-5  sm:w-[calc(50%-10px)]'>
@@ -50,6 +54,7 @@ const Form = () => {
 								autoComplete='email'
 								className='form-inputs h-10'
 								required
+								placeholder='your email'
 							/>
 						</div>
 					</div>
@@ -64,13 +69,15 @@ const Form = () => {
 							rows='5'
 							className='form-inputs py-3 resize-none'
 							required
+							placeholder='Message'
 						></textarea>
 					</div>
 				</div>
 
 				<input
+					id='B_send'
 					type='submit'
-					value='Send'
+					value='SEND'
 					className='flex flex-col min-w-[100px] max-w-[300px] items-center  border rounded-full mb-7  w-full py-2 text-[20px] font-bold tracking-[2.2px] sm:max-w-[250px] hover:shadow-accent hover:transition-shadow hover:shadow-md '
 				/>
 			</form>
