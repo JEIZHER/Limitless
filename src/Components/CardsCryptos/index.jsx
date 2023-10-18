@@ -14,7 +14,7 @@ const CardsCryptos = (props) => {
 					props.orden === 'blocks' ? '' : 'w-[230px] my-1 ml-3'
 				}`}
 			>
-				<img src={props.icon} alt={props.id} className='h-7 w-7' />
+				<img src={props.icon} alt={props.id} className='h-7 w-7' loading='lazy' />
 				<h1 className=' text-2xl sm:text-3xl mb-1 font-bold'>{props.symbol}</h1>
 			</div>
 			<div className='flex flex-row justify-between'>
@@ -24,7 +24,7 @@ const CardsCryptos = (props) => {
 					>
 						Current price :
 					</p>
-					<p className='   px-2 rounded-lg w-40 bg-slate-800'>
+					<p className='   px-2 rounded-lg w-40 bg-gray-900'>
 						{props.price}
 					</p>
 					<p className={`hidden text-[#0ECB81] px-2 ml-2 rounded-lg  w-40 bg-slate-800 ${props.orden === 'blocks' ? 'hidden' : 'lg:block'}`}>
@@ -41,7 +41,6 @@ const CardsCryptos = (props) => {
 					height='50'
 					className={` ${props.orden === 'blocks' ? 'my-3' : 'my-0 mx-4'}`}
 				></canvas>
-				{/* <div className='border rounded-[50%]  w-5 h-5 ml-1 my-auto pl-1 text-[8px] font-bold'>24</div> */}
 			</div>
 		</div>
 	)

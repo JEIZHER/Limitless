@@ -7,7 +7,7 @@ const Sidebar = () => {
 	return (
 		// Sidebar
 
-		<nav className='hidden fixed top-0 h-12 w-full z-10     lg:h-full   lg:w-[200px]  bg-gray-900 sm:flex flex-row lg:flex-col justify-center items-center text-white text-bold text-[11px] '>
+		<nav className='hidden fixed top-0 h-12 w-full z-10  lg:h-full   lg:w-[200px]  bg-gray-900 sm:flex flex-row lg:flex-col justify-center items-center text-white text-bold text-[11px] '>
 			<ul className='relative menu flex flex-row justify-center lg:flex-col gap-3 lg:gap-7 w-full  lg:ml-6'>
 				<li>
 					<a
