@@ -1,11 +1,23 @@
 import React, { useRef } from 'react'
 import emailjs from '@emailjs/browser'
+import ReCAPTCHA from 'react-google-recaptcha'
 const Form = () => {
+	
 	const form = useRef()
+	const captcha = useRef(null)
+	const onChange = () => {
+		const btn = document.getElementById('B_send')
+		if (captcha.current.getValue()) {
+			btn.disabled = false
+		} else {
+			btn.disabled = true
+		}
+	}
 	const sendEmail = (e) => {
 		e.preventDefault()
 		const btn = document.getElementById('B_send')
-		btn.value='Sending...'
+		btn.value = 'Sending...'
+
 		emailjs
 			.sendForm(
 				import.meta.env.VITE_SERVICE_ID,
@@ -14,20 +26,25 @@ const Form = () => {
 				import.meta.env.VITE_PUBLIC_KEY
 			)
 			.then(
-				(result) => {
-					btn.value='SEND'
+				() => {
+					btn.value = 'SEND'
+					captcha.current.reset()
 					alert('The message has been sent successfully')
+					btn.classList.remove('opacity-100')
+					// btn.classList.add('opacity-50')
+					// btn.classList.add('disabled')
+					btn.disabled = true
 				},
 				(error) => {
-					btn.value='SEND'
-					alert('Apologies, an error has occurred'+ error.text)
+					btn.value = 'SEND'
+					alert('Apologies, an error has occurred....' + error.text)
 				}
 			)
 	}
 	return (
 		<div className='lg:flex lg:gap-6'>
 			<form ref={form} onSubmit={sendEmail}>
-				<div className='flex flex-col mb-8 '>
+				<div className='flex flex-col mb-3 '>
 					<div className='sm:flex sm:flex-row justify-between'>
 						<div className='pb-5  sm:w-[calc(50%-10px)]'>
 							<label htmlFor='name' className='block pb-3 '>
@@ -48,7 +65,7 @@ const Form = () => {
 								Email
 							</label>
 							<input
-								type='text'
+								type='email'
 								name='email'
 								id='email'
 								autoComplete='email'
@@ -74,12 +91,23 @@ const Form = () => {
 					</div>
 				</div>
 
-				<input
-					id='B_send'
-					type='submit'
-					value='SEND'
-					className='flex flex-col min-w-[100px] max-w-[300px] items-center  border rounded-full mb-7  w-full py-2 text-[20px] font-bold tracking-[2.2px] sm:max-w-[250px] hover:shadow-accent hover:transition-shadow hover:shadow-md '
+				{/* <div className="g-recaptcha mb-5" data-sitekey= {import.meta.env.VITE_RECAPTCHA_KEY} theme='dark'></div>			  */}
+				<ReCAPTCHA
+					ref={captcha}
+					onChange={onChange}
+					sitekey={import.meta.env.VITE_RECAPTCHA_KEY}
+					className='mb-5'
 				/>
+
+				<label>
+					<input
+						id='B_send'
+						type='submit'
+						value='SEND'
+						disabled='true'
+						className='flex flex-col min-w-[100px] max-w-[300px] items-center  border rounded-full mb-7  w-full py-2 text-[20px] font-bold tracking-[2.2px] sm:max-w-[250px] hover:shadow-accent hover:transition-shadow hover:shadow-md cursor-pointer  disabled:opacity-50 disabled:pointer-events-none '
+					/>
+				</label>
 			</form>
 
 			<section className='pt-12 mt-12 border-t lg:pt-0 lg:mt-0 lg:border-l lg:border-t-0 lg:pl-6'>
