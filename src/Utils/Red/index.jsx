@@ -1,11 +1,11 @@
 
 const  Red = ()=>{
     window.addEventListener("offline", () => {
-        alert("offline");
+        MessageEvent("offline");
       });
       
       window.addEventListener("online", () => {
-        alert("online");
+        MessageEvent("online");
       })
 
 }

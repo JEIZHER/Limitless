@@ -8,9 +8,9 @@ const Form = () => {
 	const onChange = () => {
 		const btn = document.getElementById('B_send')
 		if (captcha.current.getValue()) {
-			btn.disabled = false
+			 btn.disabled = false
 		} else {
-			btn.disabled = true
+			 btn.disabled = true
 		}
 	}
 	const sendEmail = (e) => {
@@ -33,7 +33,7 @@ const Form = () => {
 					btn.classList.remove('opacity-100')
 					// btn.classList.add('opacity-50')
 					// btn.classList.add('disabled')
-					btn.disabled = true
+					 btn.disabled 
 				},
 				(error) => {
 					btn.value = 'SEND'
@@ -104,7 +104,7 @@ const Form = () => {
 						id='B_send'
 						type='submit'
 						value='SEND'
-						disabled='true'
+						disabled
 						className='flex flex-col min-w-[100px] max-w-[300px] items-center  border rounded-full mb-7  w-full py-2 text-[20px] font-bold tracking-[2.2px] sm:max-w-[250px] hover:shadow-accent hover:transition-shadow hover:shadow-md cursor-pointer  disabled:opacity-50 disabled:pointer-events-none '
 					/>
 				</label>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 const CardsCryptos = (props) => {
 	return (
 		<div
@@ -10,12 +11,15 @@ const CardsCryptos = (props) => {
 			}`}
 		>
 			<div
-				className={`hover:shadow-accent hover:shadow-md cursor-pointer flex  items-center  space-x-3 bg-slate-300  rounded-lg pl-2 ${
+				className={`hover:shadow-accent hover:shadow-md cursor-pointer  bg-slate-300  rounded-lg pl-2 ${
 					props.orden === 'blocks' ? '' : 'w-[230px] my-1 ml-3'
 				}`}
 			>
+				<Link to={"/Graficos"} state={props.symbol+'USDT'} className='flex  items-center  space-x-3'>
 				<img src={props.icon} alt={props.id} className='h-7 w-7' loading='lazy' />
 				<h1 className=' text-2xl sm:text-3xl mb-1 font-bold'>{props.symbol}</h1>
+				</Link>
+
 			</div>
 			<div className='flex flex-row justify-between'>
 				<div className={`my-3 text-xl text-white font-semibold tracking-[2px] ${props.orden === 'blocks' ? '' : 'flex'}`} >
