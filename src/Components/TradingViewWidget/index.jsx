@@ -17,7 +17,7 @@ export default function TradingViewWidget(props) {
 				script.type = 'text/javascript'
 				script.onload = resolve
 				document.head.appendChild(script)
-      // reject(new Error('hay un error')) 
+       // reject(new Error('hay un error')) 
 			})
 		}
     
