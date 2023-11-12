@@ -1,0 +1,4 @@
+[[headers]]
+  for = "/*"
+  [headers.values]
+  Content-Security-Policy= "script-src 'self' https://www.gstatic.com/recaptcha/releases/fGZmEzpfeSeqDJiApS_XZ4Y2/recaptcha__es_419.js https://www.google.com/recaptcha/api.js https://s3.tradingview.com/tv.js https://static.tradingview.com/static ; object-src 'none';base-uri 'none'"
