@@ -7,10 +7,10 @@ import Observer from '../../Utils/Observer'
 import Carousel from '../../Components/Carousel'
 import useFetch from '../../Hooks/useFetch'
 import Loading from '../../Utils/Loading'
-import Red from '../../Utils/Red'
+//import Red from '../../Utils/Red'
 
 function Home() {
-	Red()
+//	Red()
 	const data_sec_1 = [
 		{
 			titulo: 'Bitcoin and Microcommerce',

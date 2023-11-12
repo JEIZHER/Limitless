@@ -1,9 +1,11 @@
 import { createContext } from 'react'
+import { useLocation } from 'react-router-dom'
 import { Websocket } from '../Hooks/useWebSocket'
 
 export const ContextDatCryptos = createContext()
 
 export const ContextCryptosProvider = ({ children }) => {
+	let { pathname} = useLocation()
 	let hClose
 	let data_sec = {}
 	try {
@@ -13,7 +15,7 @@ export const ContextCryptosProvider = ({ children }) => {
 			console.log(e)
 		}
 	}
-	data_sec &&
+	data_sec && pathname==='/'?
 		data_sec?.map((cripto) => {
 			let allChildren = []
 			let color = 'white'
@@ -53,7 +55,7 @@ export const ContextCryptosProvider = ({ children }) => {
 				allChildren[1].children[0].children[3].textContent =
 					cripto.l > 1 ? Number(cripto.l).toFixed(2) : Number(cripto.l)
 			}
-		})
+		}):null
 
 	return (
 		<ContextDatCryptos.Provider value={{}}>

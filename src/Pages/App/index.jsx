@@ -22,7 +22,6 @@ const AppRoutes = () => {
 			<ContextCryptosProvider>	
 					<Sidebar />
 					<AppRoutes />
-					{/* <Graficos /> */}
 			</ContextCryptosProvider>		
 					<Footer />
 				</BrowserRouter>
