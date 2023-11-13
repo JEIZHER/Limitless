@@ -1,4 +1,4 @@
 [[headers]]
   for = "/*"
   [headers.values]
-  Content-Security-Policy= "script-src 'sha256-BsYEszKzhrbM6DVczyf//TqYt6elubOlUMA5xuuuOOQ=' 'sha256-PPH+Xc+AYOnDBdZljnllkW05WmzRo46g9+ui2PLQGWw=' 'sha256-nhP5qihC3I5x7ljXy3uE5sdN1CPjFZ3eVqeyXGRXQEw=' 'sha256-c81oEifCxSIEJ9+rGiO8ogZLpB79OYZ1I8zYG+PPiZY=' 'sha256-DeID4ULUyV9a4qwKDAfL1KrVkYhZ2B080B2a/FW83So='; object-src 'none';base-uri 'none'"
+  Content-Security-Policy= "script-src 'self' 'sha256-PPH+Xc+AYOnDBdZljnllkW05WmzRo46g9+ui2PLQGWw=' 'sha256-nhP5qihC3I5x7ljXy3uE5sdN1CPjFZ3eVqeyXGRXQEw=' 'sha256-c81oEifCxSIEJ9+rGiO8ogZLpB79OYZ1I8zYG+PPiZY=' 'sha256-DeID4ULUyV9a4qwKDAfL1KrVkYhZ2B080B2a/FW83So='; object-src 'none';base-uri 'none'"
