@@ -9,6 +9,7 @@ import useFetch from '../../Hooks/useFetch'
 import Loading from '../../Utils/Loading'
 //import Red from '../../Utils/Red'
 
+
 function Home() {
 //	Red()
 	const data_sec_1 = [
@@ -34,16 +35,16 @@ function Home() {
 			referencia: '#',
 		},
 	]
-
+	
 	const { data, loading } = useFetch(
 		'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en'
 	)
 
 	return (
-		<>
+		<> 
 			<div className=' text-sm  text-gray-100  sm:text-base lg:ml-[200px] min-w-[420px]'>
 				<section id='intro' className='bg-intro bg-cover bg-fixed h-screen'>
-					<div className=' flex flex-col justify-between w-auto h-screen pb-10  pt-12 px-7 sm:px-16 bg-intro2 opacity-95 bg-cover sm:pt-24  lg:pt-[200px]  '>
+					<div className=' flex flex-col justify-between w-auto h-screen pb-10  pt-12 px-7 sm:px-16 bg-intro2 opacity-95  sm:pt-24  lg:pt-[200px]  '>
 						<div className=' sm:flex sm:flex-col sm:space-x-3 '>
 							<h1 className='text-3xl sm:text-5xl lg:text-6xl text-white  mb-6 font-bold'>
 								X-Limitless
