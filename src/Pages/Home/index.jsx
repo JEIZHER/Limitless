@@ -72,8 +72,8 @@ function Home() {
 								</svg>
 								<span className=''>Loading...</span>
 							</div>
-						) : null}
-						<Carousel data={data.slice(1,5)} />  
+						) :<Carousel data={data.slice(1,5)} /> }
+						 
 					</div>
 				</section>
 
@@ -88,14 +88,15 @@ function Home() {
 						Stay up-to-date with our latest news and updates
 					</p>
 					<Suspense fallback={<Loading />}>
-						{data_sec_1?.map((dat, index) => (
+						{data_sec_1?.map((dat, index) => (					
 							<CardsNews
 								key={index}
 								titulo={dat.titulo}
 								texto={dat.texto}
 								referencia={dat.referencia}
 								imagen={dat.imagen}
-							/>
+							/>	
+							
 						))}
 					</Suspense>
 				</section>
